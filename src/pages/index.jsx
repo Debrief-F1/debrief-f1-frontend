@@ -157,7 +157,7 @@ const App = () => {
                   onClick={resetForm}
                   className="hover:underline decoration-solid "
                 >
-                  continue son inscription
+                  continue sans inscription
                 </button>
               </div>
             </Form>
