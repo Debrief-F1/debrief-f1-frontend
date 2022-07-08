@@ -44,7 +44,9 @@ const handleSubmit = (values) => {
 
 const App = () => {
   return (
+
     <div className=" flex flex-col items-center bg-gradient-to-b from-gray-100 to-gray-500  rounded-md border-2 border-indigo-600 ">
+      <div>gggggggggg</div>
       <div className="">
         <img className="w-64 h-32" src="https://www.pngmart.com/files/10/Formula-1-Logo-PNG-File.png" alt="" />
       </div>
