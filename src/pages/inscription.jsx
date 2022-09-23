@@ -1,14 +1,16 @@
-import React, { useState } from "react"
+import React, { useCallback, useState } from "react"
 import { Formik, Field, Form, ErrorMessage } from "formik"
-import validationSchema from "../components/Validateur"
-import Modal from "../components/Modal"
-import Link from "@/components/Link"
+import Link from "@/components/Link.jsx"
+import { useRouter } from "next/router.js"
+import api from "@/services/api.js"
+import { AxiosError } from "axios"
+import Modal from "@/components/Modal.jsx"
+import validationSchema from "@/components/Validateur.jsx"
 
 const initialValues = {
   username: "",
   displayName: "",
   email: "",
-  telephone: "",
   password: "",
   confirmPassword: "",
   acceptTerms: false,
@@ -23,6 +25,35 @@ const Inscription = () => {
     setOpenModal(false)
   }
 
+  const router = useRouter()
+  const [errors, setErrors] = useState([])
+  const handleSubmit = useCallback(
+    async ({ email, username, displayName, password }) => {
+      setErrors([])
+
+      try {
+        const {
+          data: { count },
+        } = await api.post("/users", { email, username, displayName, password })
+
+        if (count) {
+          router.push("/")
+
+          return
+        }
+      } catch (err) {
+        if (err instanceof AxiosError && err.response?.data?.error) {
+          setErrors(err.response.data.error)
+
+          return
+        }
+
+        setErrors(["Oops. Something went wrong, please try again."])
+      }
+    },
+    [router]
+  )
+
   return (
     <div className="h-screen">
       <div className=" h-full flex flex-col items-center bg-gradient-to-b from-gray-100 to-gray-500  rounded-md border-2 border-indigo-600 ">
@@ -30,25 +61,34 @@ const Inscription = () => {
           <img
             className="w-64 h-32"
             src="https://www.pngmart.com/files/10/Formula-1-Logo-PNG-File.png"
-            alt=""
+            alt="logo f1"
           />
         </div>
-        <div className="">
-          <h1 className="text-center text-4xl font-bold mb-5  bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-violet-900 ">
-            Inscription
-          </h1>
-          <p>
-            deja inscrit?{" "}
-            <Link className="hover:underline" href="/sign-in">
-              {" "}
-              se connecter
-            </Link>
-          </p>
+        <div>
+          <div className="text-center">
+            <h1 className="text-center text-4xl font-bold mb-5  bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-violet-900 ">
+              Sign-Up
+            </h1>
+            <p>
+              deja inscrit?{" "}
+              <Link className="hover:underline font-bold" href="/sign-in">
+                {" "}
+                se connecter
+              </Link>
+            </p>
+          </div>
+          {errors.length ? (
+            <div className="rounded-lg border-4 border-red-600 mb-4 flex flex-col gap-4 p-4">
+              {errors.map((error) => (
+                <p key={error}>{error}</p>
+              ))}
+            </div>
+          ) : null}
 
           <Formik
             initialValues={initialValues}
             validationSchema={validationSchema}
-            onSubmit={(values) => handleSubmit(values)}
+            onSubmit={handleSubmit}
           >
             {({ resetForm }) => (
               <Form>
@@ -56,7 +96,6 @@ const Inscription = () => {
                   <label>Email *:</label>
                   <Field
                     type="email"
-                    id="email"
                     name="email"
                     className="border-2 border-black px-2 rounded"
                   />
@@ -70,21 +109,20 @@ const Inscription = () => {
                   <label>Username *:</label>
                   <Field
                     type="text"
-                    id="username"
                     name="username"
                     className="border-2 border-black px-2 rounded "
                   />
                   <ErrorMessage
-                    name="usernsme"
+                    name="username"
                     component="small"
                     className="text-red-600 "
                   />
                 </div>
+
                 <div className="flex flex-col">
                   <label>DisplayName *:</label>
                   <Field
                     type="text"
-                    id="displayName"
                     name="displayName"
                     className="border-2 border-black px-2 rounded"
                   />
@@ -94,11 +132,11 @@ const Inscription = () => {
                     className="text-red-600"
                   />
                 </div>
+
                 <div className="flex flex-col">
                   <label>Mot de passe *:</label>
                   <Field
                     type="password"
-                    id="password"
                     name="password"
                     className="border-2 border-black px-2 rounded"
                   />
@@ -108,11 +146,11 @@ const Inscription = () => {
                     className="text-red-600"
                   />
                 </div>
+
                 <div className="flex flex-col">
                   <label>Confirmer le mot de passe *:</label>
                   <Field
                     type="password"
-                    id="confirmPassword"
                     name="confirmPassword"
                     className="border-2 border-black px-2 rounded"
                   />
@@ -122,6 +160,7 @@ const Inscription = () => {
                     className="text-red-600"
                   />
                 </div>
+
                 <div className="flex flex-col">
                   <div>
                     <Field
@@ -149,6 +188,7 @@ const Inscription = () => {
                   />
                   <p className="text-sm"> * champs obligatoire</p>
                 </div>
+
                 <div className="flex gap-3 my-3">
                   <button
                     type="submit"
@@ -160,7 +200,7 @@ const Inscription = () => {
                   <Link
                     href="/"
                     onClick={resetForm}
-                    className="hover:underline"
+                    className="hover:underline pt-2"
                   >
                     continue sans inscription
                   </Link>

@@ -1,59 +1,75 @@
 import BurgerMenu from "./burger-menu"
 import Link from "./Link"
+import { BiHome, BiCog } from "react-icons/bi"
+import { FaCar } from "react-icons/fa"
+import { VscSignOut } from "react-icons/vsc"
+import { AiOutlineUser } from "react-icons/ai"
+import { useAppContext } from "./AppContext"
+import { useRouter } from "next/router"
 
 const Page = (props) => {
+  const router = useRouter()
+
   const { children } = props
+  const {
+    state: { session },
+  } = useAppContext()
+
+  const { setSession } = useAppContext()
+
+  const handelClick = () => {
+    setSession()
+    router.push("/")
+
+    return
+  }
 
   return (
     <div className="h-screen flex flex-col ">
       <header className="flex justify-between">
-        {/* <h1 className="font-bold my-2 px-4 border-b-2">
-          <Link href="/">Home</Link>{" "}
-        </h1> */}
-
         <BurgerMenu />
 
         <div className="w-full grow">
           <img
-            className="w-full h-20 "
+            className="w-full h-[60px] "
             src="https://www.pngmart.com/files/10/Formula-1-Logo-PNG-File.png"
             alt="logo furmula1"
           />
         </div>
-        <h1 className=" font-bold my-2 px-4 border-b-2">
-          <Link href="/inscription">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              strokeWidth={1.5}
-              stroke="currentColor"
-              className="w-10 h-10"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z"
-              />
-            </svg>
-          </Link>{" "}
-        </h1>
+        {session ? (
+          <button onClick={handelClick}>
+            {" "}
+            <VscSignOut className="w-[50px] h-[50px] pt-2 pr-2" />
+          </button>
+        ) : (
+          <h1 className=" font-bold  px-4 pt-2 border-b-2">
+            <Link href="/inscription">
+              <AiOutlineUser className="w-[35px] h-[35px]" />
+            </Link>{" "}
+          </h1>
+        )}
       </header>
 
-      <article className="grow">{children}</article>
+      <article className="grow overflow-y-auto">{children}</article>
 
-      <footer className="flex justify-between sticky Bottom-0">
-        <h1 className="font-bold my-2 px-4 border-b-2">
-          <Link href="/">Home</Link>{" "}
+      <footer className="flex justify-between sticky Bottom-0 bg-gradient-to-b from-gray-100 to-gray-500">
+        <h1>
+          <Link href="/">
+            <BiHome className="w-[50px] h-[50px] pl-4" />
+          </Link>{" "}
         </h1>
-        <h1 className=" font-bold my-2 px-4 border-b-2">
-          <Link href="/page1">page1</Link>{" "}
+        <h1 className="">
+          <Link href="/page1">
+            <FaCar className="w-[40px] h-[40px] pt-2" />
+          </Link>{" "}
         </h1>
-        <h1 className=" font-bold my-2 px-4 border-b-2">
+        <h1 className=" font-bold">
           <Link href="/page2">page2</Link>{" "}
         </h1>
-        <h1 className=" font-bold my-2 px-4 border-b-2">
-          <Link href="/page3">page3</Link>{" "}
+        <h1 className="">
+          <Link href="/setting">
+            <BiCog className="w-[50px] h-[50px] pr-4" />
+          </Link>{" "}
         </h1>
       </footer>
     </div>

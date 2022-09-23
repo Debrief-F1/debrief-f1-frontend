@@ -13,7 +13,7 @@ const ConstructorsRanking = () => {
 
         <section className="w-full py-auto px-auto mt-9 ">
           <ol className="border  gap-x-2 flex flex-col justify-between text-xl font-bold bg-gradient-to-b from-gray-100 to-gray-500 w-70">
-            <li className="border  flex flex-start justify-between place-items-center">
+            <li className="border  flex flex-start justify-between place-items-center bg-red-300">
               <p className="border  w-12 text-center">1</p>
               <img
                 src="https://www.clipartmax.com/png/middle/193-1936092_red-bull-logo-red-bull-f1-logo.png"
