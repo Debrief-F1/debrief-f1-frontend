@@ -164,7 +164,7 @@ const UserPatch = () => {
                   className="p-2 text font-bold text-white bg-blue-500 active:bg-blue-400 rounded"
                   href="/setting"
                 >
-                  Settings
+                  Annule
                 </Link>
               </div>
             </Form>

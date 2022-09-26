@@ -6,6 +6,7 @@ import api from "@/services/api.js"
 import { AxiosError } from "axios"
 import Modal from "@/components/Modal.jsx"
 import validationSchema from "@/components/Validateur.jsx"
+// import { useAppContext } from "@/components/AppContext"
 
 const initialValues = {
   username: "",
@@ -26,7 +27,26 @@ const Inscription = () => {
   }
 
   const router = useRouter()
+  // const { setSession } = useAppContext()
   const [errors, setErrors] = useState([])
+
+  // const signIn = useCallback(
+  //   async ({ emailOrUsername, password }) => {
+  //     const {
+  //       data: {
+  //         result: [{ jwt }],
+  //       },
+  //     } = await api.post("/sign-in", { emailOrUsername, password })
+
+  //     if (jwt) {
+  //       setSession(jwt)
+
+  //       return
+  //     }
+  //   },
+  //   [setSession]
+  // )
+
   const handleSubmit = useCallback(
     async ({ email, username, displayName, password }) => {
       setErrors([])
@@ -36,8 +56,11 @@ const Inscription = () => {
           data: { count },
         } = await api.post("/users", { email, username, displayName, password })
 
+        // const emailOrUsername = email
+        // signIn({ emailOrUsername, password })
+
         if (count) {
-          router.push("/")
+          router.push("/sign-in")
 
           return
         }

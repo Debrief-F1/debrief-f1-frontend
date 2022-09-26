@@ -38,9 +38,11 @@ const BurgerMenu = () => {
               </Link>
             </li>
             <li className="border-b md:border-0 bg-teal-400 rounded-xl">
-              <a className="p-4 block hover:bg-slate-100 rounded-xl" href="/">
-                Last Race
-              </a>
+              <Link href="/last-race">
+                <a className="p-4 block hover:bg-slate-100 rounded-xl">
+                  Last Race
+                </a>
+              </Link>
             </li>
             <li className="border-b md:border-0 bg-teal-400 rounded-xl">
               <a className="p-4 block hover:bg-slate-100 rounded-xl" href="/">

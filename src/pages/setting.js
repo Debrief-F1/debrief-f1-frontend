@@ -1,11 +1,37 @@
 import { useAppContext } from "@/components/AppContext.jsx"
 import Link from "@/components/Link"
 import Page from "@/components/Page"
+import api from "@/services/api"
+import { useRouter } from "next/router"
+import { useCallback, useState } from "react"
+import { BsExclamationOctagon } from "react-icons/bs"
 
 const Settings = () => {
+  const [isActive, setIsActive] = useState(false)
   const {
     state: { session },
   } = useAppContext()
+  const router = useRouter()
+  const { setSession } = useAppContext()
+  const handelActive = () => {
+    setIsActive(true)
+  }
+  const hendelAnnule = () => {
+    setIsActive(false)
+  }
+
+  const handelDelete = useCallback(async () => {
+    const {
+      data: { count },
+    } = await api.delete(`/users/${session.user.id}`)
+
+    if (count) {
+      setSession()
+      router.push("/")
+
+      return
+    }
+  }, [router, session, setSession])
 
   return (
     <Page name={Settings}>
@@ -20,17 +46,50 @@ const Settings = () => {
                   <h1 className=" skew-y-12">ADMINISRATOR</h1>
                 ) : null}
               </div>
-
               <h1>Name: {session.user.username}</h1>
               <h1>DisplayName: {session.user.displayName}</h1>
               <h1>email: {session.user.email}</h1>
-              <div className="flex justify-center">
-                <Link
-                  className="mt-5 p-2 text font-bold text-white bg-blue-500 active:bg-blue-400 rounded "
-                  href="/user-patch"
-                >
-                  modify{" "}
-                </Link>
+              <div className="flex">
+                <div className="flex gap-5 justify-center">
+                  <Link
+                    className="mt-5 p-2 text font-bold text-white bg-blue-500 active:bg-blue-400 rounded "
+                    href="/user-patch"
+                  >
+                    modify{" "}
+                  </Link>
+                  <button
+                    className="mt-5 p-2 text font-bold text-white bg-red-600 active:bg-red-300 rounded"
+                    isActive={isActive}
+                    onClick={handelActive}
+                  >
+                    delette
+                  </button>
+                </div>
+
+                {isActive ? (
+                  <div className=" w-full h-screen absolute top-0 left-0  p-3 rounded-xl flex flex-col items-center ">
+                    <section className="flex flex-col items-center gap-5 h-64 w-64 mt-[150px] pt-10  bg-gradient-to-b from-red-500 to-pink-500 rounded-2xl">
+                      <BsExclamationOctagon className="w-20 h-20" />
+                      <p className="text-black font-bold text-2xl pb-2 text-center animate-ping ">
+                        ARE YOU SUR !?
+                      </p>
+                      <div className="flex gap-5">
+                        <button
+                          className=" p-2 text font-bold text-white bg-blue-500 active:bg-blue-400 rounded "
+                          onClick={hendelAnnule}
+                        >
+                          annule
+                        </button>
+                        <button
+                          className=" p-2 text font-bold text-white bg-red-600 active:bg-red-300 rounded"
+                          onClick={handelDelete}
+                        >
+                          Conferme
+                        </button>
+                      </div>
+                    </section>
+                  </div>
+                ) : null}
               </div>
             </div>
           ) : (

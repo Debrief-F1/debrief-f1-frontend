@@ -14,9 +14,12 @@ const App = () => {
       </h1>
 
       {session ? (
-        <h1 className=" p-5 font-bold text-xl">
-          <Link href="/constructor-ranking">classement constructors</Link>
-        </h1>
+        <>
+          <Link href="/comments">comment</Link>
+          <h1 className=" p-5 font-bold text-xl">
+            <Link href="/constructor-ranking">classement constructors</Link>
+          </h1>
+        </>
       ) : null}
 
       {session && session.user.role === "ADMIN" ? (
