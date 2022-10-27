@@ -1,11 +1,14 @@
 import React, { useCallback, useState } from "react"
 import { Formik, Field, Form, ErrorMessage } from "formik"
-import Link from "@/components/Link.jsx"
 import { useRouter } from "next/router.js"
-import api from "@/services/api.js"
 import { AxiosError } from "axios"
 import Modal from "@/components/Modal.jsx"
-import validationSchema from "@/components/Validateur.jsx"
+import Link from "@/components/Link"
+import api from "@/services/api"
+import { BiShowAlt, BiLowVision } from "react-icons/bi"
+
+import validationSchema from "@/components/Validateur"
+import Button from "@/components/Button"
 // import { useAppContext } from "@/components/AppContext"
 
 const initialValues = {
@@ -17,8 +20,11 @@ const initialValues = {
   acceptTerms: false,
 }
 
-const Inscription = () => {
+const SignUp = () => {
   const [openModal, setOpenModal] = useState(false)
+  const [visible, setVisiblity] = useState(false)
+  const [visible1, setVisiblity1] = useState(false)
+
   const handleClick = () => {
     setOpenModal(true)
   }
@@ -49,6 +55,7 @@ const Inscription = () => {
 
   const handleSubmit = useCallback(
     async ({ email, username, displayName, password }) => {
+      console.log(123)
       setErrors([])
 
       try {
@@ -60,7 +67,7 @@ const Inscription = () => {
         // signIn({ emailOrUsername, password })
 
         if (count) {
-          router.push("/sign-in")
+          router.push("/users/sign-in")
 
           return
         }
@@ -76,6 +83,20 @@ const Inscription = () => {
     },
     [router]
   )
+
+  const handleVisionOn = () => {
+    setVisiblity(true)
+  }
+  const handleVisionOff = () => {
+    setVisiblity(false)
+  }
+
+  const handleVisionOn1 = () => {
+    setVisiblity1(true)
+  }
+  const handleVisionOff1 = () => {
+    setVisiblity1(false)
+  }
 
   return (
     <div className="h-screen">
@@ -94,7 +115,7 @@ const Inscription = () => {
             </h1>
             <p>
               deja inscrit?{" "}
-              <Link className="hover:underline font-bold" href="/sign-in">
+              <Link className="hover:underline font-bold" href="/users/sign-in">
                 {" "}
                 se connecter
               </Link>
@@ -113,7 +134,7 @@ const Inscription = () => {
             validationSchema={validationSchema}
             onSubmit={handleSubmit}
           >
-            {({ resetForm }) => (
+            {(formik) => (
               <Form>
                 <div className="flex flex-col">
                   <label>Email *:</label>
@@ -158,11 +179,22 @@ const Inscription = () => {
 
                 <div className="flex flex-col">
                   <label>Mot de passe *:</label>
-                  <Field
-                    type="password"
-                    name="password"
-                    className="border-2 border-black px-2 rounded"
-                  />
+                  <div className="flex items-center justify-between border-2 px-2 border-black rounded bg-white">
+                    <Field
+                      type={visible ? "text" : "password"}
+                      name="password"
+                      className=""
+                    />
+                    {visible ? (
+                      <span onClick={handleVisionOff}>
+                        <BiLowVision className=" w-6 h-6 hover:text-red-600 hover:cursor-pointer" />
+                      </span>
+                    ) : (
+                      <span onClick={handleVisionOn}>
+                        <BiShowAlt className=" w-6 h-6 hover:text-red-600 hover:cursor-pointer" />
+                      </span>
+                    )}
+                  </div>
                   <ErrorMessage
                     name="password"
                     component="small"
@@ -172,11 +204,22 @@ const Inscription = () => {
 
                 <div className="flex flex-col">
                   <label>Confirmer le mot de passe *:</label>
-                  <Field
-                    type="password"
-                    name="confirmPassword"
-                    className="border-2 border-black px-2 rounded"
-                  />
+                  <div className="flex items-center justify-between border-2 px-2 border-black rounded bg-white">
+                    <Field
+                      type={visible1 ? "text" : "password"}
+                      name="confirmPassword"
+                      className=" border-transparent"
+                    />
+                    {visible1 ? (
+                      <span onClick={handleVisionOff1}>
+                        <BiLowVision className=" w-6 h-6 hover:text-red-600 hover:cursor-pointer" />
+                      </span>
+                    ) : (
+                      <span onClick={handleVisionOn1}>
+                        <BiShowAlt className=" w-6 h-6 hover:text-red-600 hover:cursor-pointer " />
+                      </span>
+                    )}
+                  </div>
                   <ErrorMessage
                     name="confirmPassword"
                     component="small"
@@ -213,18 +256,16 @@ const Inscription = () => {
                 </div>
 
                 <div className="flex gap-3 my-3">
-                  <button
+                  <Button
                     type="submit"
-                    className="p-2 text font-bold text-white bg-blue-500 active:bg-blue-400 rounded"
+                    // className="p-2 text font-bold text-white bg-blue-500 active:bg-blue-400 rounded"
+                    className="text-center  focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50"
+                    disabled={!formik.isValid || formik.isSubmitted}
                   >
                     S'inscrire
-                  </button>
+                  </Button>
 
-                  <Link
-                    href="/"
-                    onClick={resetForm}
-                    className="hover:underline pt-2"
-                  >
+                  <Link href="/" className="hover:underline pt-2">
                     continue sans inscription
                   </Link>
                 </div>
@@ -302,4 +343,4 @@ const Inscription = () => {
   )
 }
 
-export default Inscription
+export default SignUp

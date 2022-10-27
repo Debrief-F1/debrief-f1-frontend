@@ -26,5 +26,10 @@ const validationSchema = Yup.object().shape({
     [true],
     "Accepter les conditions est obligatoire"
   ),
+  // name: Yup.string()
+  //   .min(1, "trop petit!")
+  //   .max(50, "trop long!")
+  //   .required("Ce champ est obligatoire"),
+  // year: Yup.date().required("Ce champ est obligatoire"),
 })
 export default validationSchema

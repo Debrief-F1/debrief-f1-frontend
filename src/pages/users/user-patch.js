@@ -1,43 +1,40 @@
 import React, { useCallback, useState } from "react"
 import { Formik, Field, Form, ErrorMessage } from "formik"
-import Link from "@/components/Link.jsx"
+// import Link from "@/components/Link.jsx"
 import { useRouter } from "next/router.js"
 import api from "@/services/api.js"
 import { AxiosError } from "axios"
-import validationSchema from "@/components/Validateur.jsx"
-import { useAppContext } from "@/components/AppContext"
+// import validationSchema from "@/components/Validateur.jsx"
+// import { useAppContext } from "@/components/AppContext"
 
 const initialValues = {
-  username: "",
-  displayName: "",
+  // username: "",
+  // displayName: "",
   email: "",
   password: "",
   confirmPassword: "",
 }
 
 const UserPatch = () => {
-  const {
-    state: { session },
-  } = useAppContext()
+  // const {
+  //   state: { session },
+  // } = useAppContext()
 
   const router = useRouter()
   const [errors, setErrors] = useState([])
   const handleSubmit = useCallback(
-    async ({ email, username, displayName, password }) => {
+    async ({ password, email }) => {
       setErrors([])
 
       try {
         const {
-          data: { count },
-        } = await api.patch(`/users/${session.user.id}`, {
-          email,
-          username,
-          displayName,
+          data: { result },
+        } = await api.patch(`/users/${email}`, {
           password,
         })
 
-        if (count) {
-          router.push("/")
+        if (result.length !== 0) {
+          router.push("/users/sign-in")
 
           return
         }
@@ -67,7 +64,7 @@ const UserPatch = () => {
         <div>
           <div className="text-center">
             <h1 className="text-center text-4xl font-bold mb-5  bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-violet-900 ">
-              Sign-Up
+              Ubdate password
             </h1>
           </div>
           {errors.length ? (
@@ -80,12 +77,12 @@ const UserPatch = () => {
 
           <Formik
             initialValues={initialValues}
-            validationSchema={validationSchema}
+            // validationSchema={validationSchema}
             onSubmit={handleSubmit}
           >
             <Form>
               <div className="flex flex-col">
-                <label>New Email :</label>
+                <label>Confirm your email :</label>
                 <Field
                   type="email"
                   name="email"
@@ -97,7 +94,7 @@ const UserPatch = () => {
                   className="text-red-600"
                 />
               </div>
-              <div className="flex flex-col">
+              {/* <div className="flex flex-col">
                 <label>New Username :</label>
                 <Field
                   type="text"
@@ -109,9 +106,9 @@ const UserPatch = () => {
                   component="small"
                   className="text-red-600 "
                 />
-              </div>
+              </div> */}
 
-              <div className="flex flex-col">
+              {/* <div className="flex flex-col">
                 <label>New DisplayName :</label>
                 <Field
                   type="text"
@@ -123,7 +120,7 @@ const UserPatch = () => {
                   component="small"
                   className="text-red-600"
                 />
-              </div>
+              </div> */}
 
               <div className="flex flex-col">
                 <label>New password :</label>
@@ -160,12 +157,12 @@ const UserPatch = () => {
                 >
                   Confirm
                 </button>
-                <Link
+                {/* <Link
                   className="p-2 text font-bold text-white bg-blue-500 active:bg-blue-400 rounded"
                   href="/setting"
                 >
                   Annule
-                </Link>
+                </Link> */}
               </div>
             </Form>
           </Formik>

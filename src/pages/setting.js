@@ -5,19 +5,20 @@ import api from "@/services/api"
 import { useRouter } from "next/router"
 import { useCallback, useState } from "react"
 import { BsExclamationOctagon } from "react-icons/bs"
+import Contact from "./contact"
 
 const Settings = () => {
-  const [isActive, setIsActive] = useState(false)
+  const [isactive, setIsactive] = useState(false)
   const {
     state: { session },
   } = useAppContext()
   const router = useRouter()
   const { setSession } = useAppContext()
   const handelActive = () => {
-    setIsActive(true)
+    setIsactive(true)
   }
   const hendelAnnule = () => {
-    setIsActive(false)
+    setIsactive(false)
   }
 
   const handelDelete = useCallback(async () => {
@@ -53,20 +54,20 @@ const Settings = () => {
                 <div className="flex gap-5 justify-center">
                   <Link
                     className="mt-5 p-2 text font-bold text-white bg-blue-500 active:bg-blue-400 rounded "
-                    href="/user-patch"
+                    href="/users/user-patch"
                   >
                     modify{" "}
                   </Link>
                   <button
                     className="mt-5 p-2 text font-bold text-white bg-red-600 active:bg-red-300 rounded"
-                    isActive={isActive}
+                    isactive={isactive}
                     onClick={handelActive}
                   >
                     delette
                   </button>
                 </div>
 
-                {isActive ? (
+                {isactive && (
                   <div className=" w-full h-screen absolute top-0 left-0  p-3 rounded-xl flex flex-col items-center ">
                     <section className="flex flex-col items-center gap-5 h-64 w-64 mt-[150px] pt-10  bg-gradient-to-b from-red-500 to-pink-500 rounded-2xl">
                       <BsExclamationOctagon className="w-20 h-20" />
@@ -89,7 +90,7 @@ const Settings = () => {
                       </div>
                     </section>
                   </div>
-                ) : null}
+                )}
               </div>
             </div>
           ) : (
@@ -98,13 +99,14 @@ const Settings = () => {
                 t'as pas de compte
               </p>
               <div className="mt-5 flex justify-center">
-                <Link className="bg-blue-500 px-5 py-2" href="/inscription">
+                <Link className="bg-blue-500 px-5 py-2" href="/users/sign-up">
                   Sign-Up
                 </Link>
               </div>
             </div>
           )}
         </div>
+        <Contact />
       </div>
     </Page>
   )

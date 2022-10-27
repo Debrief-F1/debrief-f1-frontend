@@ -1,4 +1,4 @@
-import BurgerMenu from "./burger-menu"
+import BurgerMenu from "./BurgerMenu"
 import Link from "./Link"
 import { BiHome, BiCog } from "react-icons/bi"
 import { FaCar } from "react-icons/fa"
@@ -28,7 +28,6 @@ const Page = (props) => {
     <div className="h-screen flex flex-col ">
       <header className="flex justify-between">
         <BurgerMenu />
-
         <div className="w-full grow">
           <img
             className="w-full h-[60px] "
@@ -43,11 +42,12 @@ const Page = (props) => {
           </button>
         ) : (
           <h1 className=" font-bold  px-4 pt-2 border-b-2">
-            <Link href="/inscription">
+            <Link href="/users/sign-up">
               <AiOutlineUser className="w-[35px] h-[35px]" />
             </Link>{" "}
           </h1>
         )}
+        ;
       </header>
 
       <article className="grow overflow-y-auto">{children}</article>

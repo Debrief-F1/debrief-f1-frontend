@@ -29,14 +29,11 @@ const Comments = () => {
         } = await api.post("/comments", { content, raceId })
 
         if (count) {
-          console.log(count)
           // router.push("/")
 
           return
         }
       } catch (err) {
-        console.log(err)
-
         if (err instanceof AxiosError && err.response?.data?.error) {
           setErrors(err.response.data.error)
 

@@ -3,9 +3,10 @@ import { Formik, Field, Form, ErrorMessage } from "formik"
 import { useRouter } from "next/router.js"
 import api from "@/services/api.js"
 import { AxiosError } from "axios"
-import validationSchema1 from "@/components/validateur1"
+import validationSchema1 from "@/components/Validateur1"
 import { useAppContext } from "@/components/AppContext"
 import Link from "@/components/Link"
+import { BiShowAlt, BiLowVision } from "react-icons/bi"
 
 const initialValues = {
   emailOrUsername: "",
@@ -16,6 +17,8 @@ const Inscription = () => {
   const router = useRouter()
   const { setSession } = useAppContext()
   const [errors, setErrors] = useState([])
+  const [visible, setVisiblity] = useState(false)
+
   const handleSubmit = useCallback(
     async ({ emailOrUsername, password }) => {
       setErrors([])
@@ -46,6 +49,13 @@ const Inscription = () => {
     [router, setSession]
   )
 
+  const handleVisionOff = () => {
+    setVisiblity(true)
+  }
+  const handleVesionOn = () => {
+    setVisiblity(false)
+  }
+
   return (
     <div className="h-screen">
       <div className=" h-full flex flex-col items-center bg-gradient-to-b from-gray-100 to-gray-500  rounded-md border-2 border-indigo-600 ">
@@ -56,9 +66,9 @@ const Inscription = () => {
             alt="logo f1"
           />
         </div>
-        <div className="">
-          <h1 className="text-center text-4xl font-bold mb-5  bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-violet-900 ">
-            Sign-Up
+        <div className="bg-white p-10 mt-20 rounded-xl shadow-lg shadow-white">
+          <h1 className=" text-center text-4xl font-bold mb-5  bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-violet-900 ">
+            Sign-In
           </h1>
 
           {errors.length ? (
@@ -91,11 +101,22 @@ const Inscription = () => {
 
               <div className="flex flex-col">
                 <label>Mot de passe *:</label>
-                <Field
-                  type="password"
-                  name="password"
-                  className="border-2 border-black px-2 rounded"
-                />
+                <div className="flex items-center justify-between border-2 px-2 border-black rounded bg-white">
+                  <Field
+                    type={visible ? "text" : "password"}
+                    name="password"
+                    className=""
+                  />
+                  {visible ? (
+                    <span onClick={handleVesionOn}>
+                      <BiLowVision className=" w-6 h-6 hover:text-red-600 hover:cursor-pointer" />
+                    </span>
+                  ) : (
+                    <span onClick={handleVisionOff}>
+                      <BiShowAlt className=" w-6 h-6 hover:text-red-600 hover:cursor-pointer" />
+                    </span>
+                  )}{" "}
+                </div>
                 <ErrorMessage
                   name="password"
                   component="small"
@@ -111,10 +132,16 @@ const Inscription = () => {
                   sign-in
                 </button>
                 <Link
-                  href="/inscription"
+                  href="/users/sign-up"
                   className="p-2 text font-bold text-white bg-blue-500 active:bg-blue-400 rounded hover:underline"
                 >
                   cree un compte
+                </Link>
+                <Link
+                  href="/password-forget"
+                  className="p-2 text-blue-700 hover:underline"
+                >
+                  mot de passe oublie ?
                 </Link>
               </div>
             </Form>
