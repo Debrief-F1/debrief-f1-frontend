@@ -14,9 +14,12 @@ const BurgerMenu = () => {
         <GrMenu className="w-8 h-8" />
       </button>
       <ul
-        className={`fixed inset-0 absolute h-[500px] w-64  ${
-          menuOpen ? "" : "hidden"
-        } visible static`}
+        className={`flex flex-col absolute  bg-gradient-to-r from-cyan-500 to-blue-500 pl-6 transition-all duration-500 mt-[88px] z-50 ease-in ${
+          menuOpen ? "left-0" : "left-[-290px]"
+        }`}
+        // className={`fixed inset-0 absolute h-[500px] w-64  ${
+        //   menuOpen ? "" : "hidden"
+        // } visible static`}
       >
         <button onClick={handleToggleMenu} className="p-4">
           <div className="flex flex-col gap-2">

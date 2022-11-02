@@ -26,8 +26,9 @@ const PasswordForget = () => {
       data: { result },
     } = await api.get(`/users/${email}`)
     setUser(result)
-    const nom = result[0].username
-    const prenom = result[0].displayName
+    const nom = result.username
+    const prenom = result.displayName
+    console.log(nom, prenom)
 
     if (result.length !== 0) {
       console.log(email)
