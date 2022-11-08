@@ -2,6 +2,7 @@ import Seasons from "@/components/seasons/Seasons"
 import { SeasonsContextProvider } from "@/components/seasons/SeasonsContext"
 import AddSeasonForm from "@/components/seasons/AddSeasonForm"
 import GetRaces from "@/components/races/GetRaces"
+import AddRacesForm from "@/components/races/AddRaces"
 
 const SeasonsPage = () => {
   return (
@@ -12,6 +13,7 @@ const SeasonsPage = () => {
           <AddSeasonForm />
         </div>
         <Seasons />
+        <AddRacesForm />
         <GetRaces />
       </div>
     </SeasonsContextProvider>

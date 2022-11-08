@@ -23,9 +23,9 @@ const BurgerMenu = () => {
       >
         <button onClick={handleToggleMenu} className="p-4">
           <div className="flex flex-col gap-2">
-            <li className=" border-b text-left bg-white rounded-xl">
+            {/* <li className=" border-b text-left bg-white rounded-xl">
               <GiCrossMark className="w-8 h-8" />
-            </li>
+            </li> */}
             <li className="border-b md:border-0 bg-teal-400 rounded-xl">
               <Link href="/constructor-ranking">
                 <a className="p-4 block hover:bg-slate-100 rounded-xl">

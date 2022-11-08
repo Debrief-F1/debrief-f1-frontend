@@ -1,19 +1,16 @@
 import Button from "@/components/Button"
 import Link from "@/components/Link"
 import api from "@/services/api"
-import { AxiosError } from "axios"
 import { Field, Form, Formik } from "formik"
-import { useRouter } from "next/router.js"
-import { useCallback, useEffect, useState } from "react"
+import { useState } from "react"
 
 const initialValues = {
   email: "",
 }
-// http://localhost:3000/users/user-patch    lein pour le patch
+// http://localhost:3000/users/user-patch    lien pour le patch
 const PasswordForget = () => {
   const [user, setUser] = useState([])
   const [isactive, setIsactive] = useState(false)
-  const [errors, setErrors] = useState([])
 
   const handleSubmit = async ({ email }) => {
     if (!email) {
@@ -33,29 +30,38 @@ const PasswordForget = () => {
     if (result.length !== 0) {
       console.log(email)
 
-      const data = {
-        nom: nom,
-        prenom: prenom,
-        email: email,
-        contenu: "Pour réinitialiser votre mot de passe clic ",
+      try {
+        const { data } = await api.post(`/api/email`, {
+          email,
+        })
+        console.log("msg sensed")
+      } catch (err) {
+        console.log("errorrrrrr")
       }
 
-      const response = await fetch("api/contact", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(data),
-      })
-      console.log(JSON.stringify(data))
+      // const data = {
+      //   nom: nom,
+      //   prenom: prenom,
+      //   email: email,
+      //   contenu: "Pour réinitialiser votre mot de passe clic ",
+      // }
 
-      const result = await response.json()
+      // const response = await fetch("api/contact", {
+      //   method: "POST",
+      //   headers: {
+      //     "Content-Type": "application/json",
+      //   },
+      //   body: JSON.stringify(data),
+      // })
+      // console.log(JSON.stringify(data))
 
-      if (!response.ok) {
-        console.log("erroooooor")
-      } else {
-        console.log("ok")
-      }
+      // const result = await response.json()
+
+      // if (!response.ok) {
+      //   console.log("erroooooor")
+      // } else {
+      //   console.log("ok")
+      // }
     }
   }
 
@@ -70,13 +76,13 @@ const PasswordForget = () => {
           />
         </div>
         <div className="bg-white p-10 mt-20 text-center rounded-xl shadow-lg shadow-white">
-          {errors.length ? (
+          {/* {errors.length ? (
             <div className="rounded-lg border-4 border-red-600 mb-4 flex flex-col gap-4 p-4">
               {errors.map((error) => (
                 <p key={error}>{error}</p>
               ))}
             </div>
-          ) : null}
+          ) : null} */}
           {!isactive && (
             <Formik initialValues={initialValues} onSubmit={handleSubmit}>
               <Form className="flex flex-col items-center gap-10">

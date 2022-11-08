@@ -18,33 +18,30 @@ const Comments = () => {
     state: { session },
   } = useAppContext()
 
-  const handleSubmit = useCallback(
-    async ({ content, raceId }) => {
-      // const userId = session.user.id
-      setErrors([])
+  const handleSubmit = useCallback(async ({ content, raceId }) => {
+    // const userId = session.user.id
+    setErrors([])
 
-      try {
-        const {
-          data: { count },
-        } = await api.post("/comments", { content, raceId })
+    try {
+      const {
+        data: { count },
+      } = await api.post("/comments", { content, raceId })
 
-        if (count) {
-          // router.push("/")
+      if (count) {
+        // router.push("/")
 
-          return
-        }
-      } catch (err) {
-        if (err instanceof AxiosError && err.response?.data?.error) {
-          setErrors(err.response.data.error)
-
-          return
-        }
-
-        setErrors(["Oops. Something went wrong, please try again."])
+        return
       }
-    },
-    [session]
-  )
+    } catch (err) {
+      if (err instanceof AxiosError && err.response?.data?.error) {
+        setErrors(err.response.data.error)
+
+        return
+      }
+
+      setErrors(["Oops. Something went wrong, please try again."])
+    }
+  }, [])
 
   return (
     <div className="h-screen">

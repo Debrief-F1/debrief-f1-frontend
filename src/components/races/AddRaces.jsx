@@ -47,6 +47,7 @@ const AddRacesForm = () => {
 
   return (
     <div className="">
+      <p>Add races</p>
       {errors.length ? (
         <div className="rounded-lg border-4 border-red-600 mb-4 flex flex-col gap-4 p-4">
           {errors.map((error) => (
