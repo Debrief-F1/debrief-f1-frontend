@@ -96,7 +96,7 @@ const alonso = () => {
                 <div className="w-7">
                   <Image src="/images/logo/redbulllogo.webp" />
                 </div>
-                REDBULL
+                REDBUL1
               </td>
               <td className="text-center">1</td>
               <td className="text-center">395</td>
