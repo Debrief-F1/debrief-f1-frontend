@@ -1,75 +1,51 @@
-import { useCallback, useState } from "react"
-// import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid"
-import Link from "next/link"
-import { GrMenu } from "react-icons/gr"
-import { GiCrossMark } from "react-icons/gi"
+import React, { useCallback, useState } from "react"
+import { Bars3Icon } from "@heroicons/react/24/solid"
+import Link from "@/components/Link"
+import classNames from "classnames"
+
+const links = [
+  { children: "Last Race", href: "/last-race" },
+  { children: "Constructors Ranking", href: "/constructors-ranking" },
+  { children: "Drivers Ranking", href: "/drivers-ranking" },
+  { children: "Constructors", href: "/constructor" },
+  { children: "Drivers", href: "/driver" },
+  { children: "Circuits", href: "/maps" },
+  { children: "Settings", href: "/" },
+]
 
 const BurgerMenu = () => {
   const [menuOpen, setMenuOpen] = useState(false)
-  const handleToggleMenu = useCallback(() => setMenuOpen((state) => !state), [])
+  const handle = useCallback(() => {
+    setMenuOpen((x) => !x)
+  }, [])
 
   return (
-    <>
-      <button className="text-xl px-4" onClick={handleToggleMenu}>
-        <GrMenu className="w-8 h-8" />
+    <div>
+      <button
+        onClick={handle}
+        className="text-3xl
+        cursor-pointer  "
+      >
+        <Bars3Icon className="w-6 h-6 mt-5" />
       </button>
       <ul
-        className={`fixed inset-0 absolute h-[500px] w-64  ${
-          menuOpen ? "" : "hidden"
-        } visible static`}
+        className={classNames(
+          "flex flex-col fixed top-[60px] bottom-[50px] bg-slate-600 left-0 pl-6 transition-all duration-500 z-50 ease-in",
+          { "-left-full": !menuOpen }
+        )}
       >
-        <button onClick={handleToggleMenu} className="p-4">
-          <div className="flex flex-col gap-2">
-            <li className=" border-b text-left bg-white rounded-xl">
-              <GiCrossMark className="w-8 h-8" />
-            </li>
-            <li className="border-b md:border-0 bg-teal-400 rounded-xl">
-              <Link href="/constructor-ranking">
-                <a className="p-4 block hover:bg-slate-100 rounded-xl">
-                  Constructors Ranking
-                </a>
-              </Link>
-            </li>
-            <li className="border-b md:border-0 bg-teal-400 rounded-xl">
-              <Link href="/classement-drivers">
-                <a className="p-4 block hover:bg-slate-100 rounded-xl">
-                  Drivers Ranking
-                </a>
-              </Link>
-            </li>
-            <li className="border-b md:border-0 bg-teal-400 rounded-xl">
-              <Link href="/last-race">
-                <a className="p-4 block hover:bg-slate-100 rounded-xl">
-                  Last Race
-                </a>
-              </Link>
-            </li>
-            <li className="border-b md:border-0 bg-teal-400 rounded-xl">
-              <a className="p-4 block hover:bg-slate-100 rounded-xl" href="/">
-                Drivers
-              </a>
-            </li>
-            <li className="border-b md:border-0 bg-teal-400 rounded-xl">
-              <a className="p-4 block hover:bg-slate-100 rounded-xl" href="/">
-                Item 5
-              </a>
-            </li>
-            <li className="border-b md:border-0 bg-teal-400 rounded-xl">
-              <a className="p-4 block hover:bg-slate-100 rounded-xl" href="/">
-                Item 6
-              </a>
-            </li>
-            <li className="border-b md:border-0 bg-teal-400 rounded-xl">
-              <Link href="/">
-                <a className="p-4 block hover:bg-slate-100 rounded-xl">
-                  Settings
-                </a>
-              </Link>
-            </li>
-          </div>
-        </button>
+        {links.map((linkProps) => (
+          <li
+            key={linkProps.href}
+            className="mr-4
+            text-xl my-7"
+          >
+            <Link className="text-white" {...linkProps} />
+          </li>
+        ))}
       </ul>
-    </>
+    </div>
   )
 }
+
 export default BurgerMenu

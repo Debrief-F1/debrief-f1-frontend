@@ -1,8 +1,6 @@
 import { useAppContext } from "@/components/AppContext"
+import HomePage from "@/pages/HomePage"
 import Link from "@/components/Link"
-import Page from "@/components/Page"
-import AddRacesForm from "@/components/races/AddRaces"
-import SignUp from "./users/sign-up"
 
 const App = () => {
   const {
@@ -10,18 +8,8 @@ const App = () => {
   } = useAppContext()
 
   return (
-    // <SignUp />
-    <Page>
-      <h1 className=" p-5 font-bold text-xl">
-        <Link href="/classement-drivers">classement drivers</Link>
-      </h1>
-
-      {session ? (
-        <h1 className=" p-5 font-bold text-xl">
-          <Link href="/constructor-ranking">classement constructors</Link>
-        </h1>
-      ) : null}
-
+    <div>
+      <HomePage />
       {session && session.user.role === "ADMIN" ? (
         <div>
           <h1 className="p-5 font-bold text-xl">
@@ -35,8 +23,7 @@ const App = () => {
           </h1>
         </div>
       ) : null}
-      <AddRacesForm />
-    </Page>
+    </div>
   )
 }
 export default App

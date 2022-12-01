@@ -3,9 +3,10 @@ import Link from "./Link"
 import { BiHome, BiCog } from "react-icons/bi"
 import { FaCar } from "react-icons/fa"
 import { VscSignOut } from "react-icons/vsc"
-import { AiOutlineUser } from "react-icons/ai"
 import { useAppContext } from "./AppContext"
 import { useRouter } from "next/router"
+import Image from "@/components/Image"
+import { UserIcon } from "@heroicons/react/24/solid"
 
 const Page = (props) => {
   const router = useRouter()
@@ -25,14 +26,13 @@ const Page = (props) => {
   }
 
   return (
-    <div className="h-screen flex flex-col ">
+    <div className="h-screen flex flex-col">
       <header className="flex justify-between">
         <BurgerMenu />
-        <div className="w-full grow">
-          <img
-            className="w-full h-[60px] "
-            src="https://www.pngmart.com/files/10/Formula-1-Logo-PNG-File.png"
-            alt="logo furmula1"
+        <div>
+          <Image
+            style={{ width: 200, height: 60 }}
+            src="/images/icons/formula1.png"
           />
         </div>
         {session ? (
@@ -43,23 +43,21 @@ const Page = (props) => {
         ) : (
           <h1 className=" font-bold  px-4 pt-2 border-b-2">
             <Link href="/users/sign-up">
-              <AiOutlineUser className="w-[35px] h-[35px]" />
+              <UserIcon className="w-6 h-6 mt-3" />
             </Link>{" "}
           </h1>
         )}
-        ;
       </header>
-
       <article className="grow overflow-y-auto">{children}</article>
 
       <footer className="flex justify-between sticky Bottom-0 bg-gradient-to-b from-gray-100 to-gray-500">
         <h1>
-          <Link href="/">
+          <Link href="/homepage">
             <BiHome className="w-[50px] h-[50px] pl-4" />
           </Link>{" "}
         </h1>
         <h1 className="">
-          <Link href="/page1">
+          <Link href="/constructor">
             <FaCar className="w-[40px] h-[40px] pt-2" />
           </Link>{" "}
         </h1>
