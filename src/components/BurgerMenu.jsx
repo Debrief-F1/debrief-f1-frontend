@@ -9,7 +9,7 @@ const links = [
   { children: "Drivers Ranking", href: "/drivers-ranking" },
   { children: "Constructors", href: "/constructor" },
   { children: "Drivers", href: "/driver" },
-  { children: "Circuits", href: "/maps" },
+  { children: "Circuits", href: "/map" },
   { children: "Settings", href: "/" },
 ]
 
@@ -24,7 +24,7 @@ const BurgerMenu = () => {
       <button
         onClick={handle}
         className="text-3xl
-        cursor-pointer md:hidden "
+        cursor-pointer"
       >
         <Bars3Icon className="w-6 h-6 mt-5" />
       </button>
@@ -38,7 +38,7 @@ const BurgerMenu = () => {
           <li
             key={linkProps.href}
             className="mr-4
-            text-xl md:my-0 my-7"
+            text-xl  my-7"
           >
             <Link className="text-white" {...linkProps} />
           </li>

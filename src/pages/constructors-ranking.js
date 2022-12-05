@@ -6,7 +6,7 @@ const constructorsRanking = () => {
     <Page>
       <div>
         <div className="rounded-lg border-2 border-black bg-gray-400 w-screen h-screen">
-          <h1 className="mt-1 mb-1 border-2 border-black rounded-lg text-white italic font-bold bg-red-600 text-center">
+          <h1 className="m-1 border-2 border-black bg-red-600 rounded-lg text-white text-center font-bold italic">
             CONSTRUCTORS RANKING
           </h1>
           <table className="w-full text-center">
@@ -14,7 +14,7 @@ const constructorsRanking = () => {
               <tr className="border-2 bg-gray-500">
                 <th className="border-2">POS</th>
                 <th className="border-2">CONSTRUCTORS</th>
-                <th className="border-2">IMG</th>
+                <th className="border-2 w-36">IMG</th>
                 <th className="border-2">PTS</th>
               </tr>
             </thead>

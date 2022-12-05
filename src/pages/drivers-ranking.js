@@ -6,33 +6,35 @@ const driversRanking = () => {
     <Page>
       <div>
         <div className="rounded-lg border-2 border-black bg-gray-400 w-screen h-screen">
-          <h1 className="mt-1 mb-1 border-2 border-black rounded-lg text-white italic font-bold bg-red-600 text-center">
+          <h1 className="m-1 border-2 border-black bg-red-600 rounded-lg text-white text-center font-bold italic">
             DRIVERS RANKING
           </h1>
           <table className="w-full text-center">
             <thead>
               <tr className="border-2 bg-gray-500">
-                <th className="border-2">POS</th>
-                <th className="border-2">NAT</th>
-                <th className="border-2">PILOTS</th>
-                <th className="border-2">IMG</th>
-                <th className="border-2">CONSTRUCTORS</th>
-                <th className="border-2">PTS</th>
+                <th className="border-2 w-[30px]">POS</th>
+                <th className="border-2 w-[30px]">NAT</th>
+                <th className="border-2 w-[170px]">PILOTS</th>
+                <th className="border-2 w-[170px]">CONSTRUCTORS</th>
+                <th className="border-2 w-[45px]">PTS</th>
               </tr>
             </thead>
             <tbody>
               <tr>
                 <td>1</td>
                 <td>🇳🇱</td>
-                <td>VERSTAPPEN</td>
-                <td>
+                <td className="flex justify-start gap-3">
                   <div className="w-7">
                     <Image src="/images/pilots/verstappen.webp" />
                   </div>
+                  VERSTAPPEN
                 </td>
-                <td className="flex justify-center">
-                  <div className="w-7">
-                    <Image src="/images/logo/redbulllogo.webp" />
+                <td>
+                  <div className="flex justify-center">
+                    <Image
+                      style={{ width: 30, height: 30 }}
+                      src="/images/logo/redbulllogo.webp"
+                    />
                   </div>
                 </td>
                 <td>416</td>
@@ -42,15 +44,18 @@ const driversRanking = () => {
               <tr>
                 <td>2</td>
                 <td>🇲🇽</td>
-                <td>PEREZ</td>
-                <td>
+                <td className="flex justify-start gap-3">
                   <div className="w-7">
                     <Image src="/images/pilots/perez.webp" />
                   </div>
+                  PEREZ
                 </td>
-                <td className="flex justify-center">
-                  <div className="w-7">
-                    <Image src="/images/logo/redbulllogo.webp" />
+                <td>
+                  <div className="flex justify-center">
+                    <Image
+                      style={{ width: 30, height: 30 }}
+                      src="/images/logo/redbulllogo.webp"
+                    />
                   </div>
                 </td>
                 <td>280</td>
@@ -60,15 +65,18 @@ const driversRanking = () => {
               <tr>
                 <td>3</td>
                 <td>🇲🇨</td>
-                <td>LECLERC</td>
-                <td>
-                  <div className="w-7">
+                <td className="flex justify-start gap-3">
+                  <div className="w-7 flex">
                     <Image src="/images/pilots/leclerc.webp" />
                   </div>
+                  LECLERC
                 </td>
-                <td className="flex justify-center">
-                  <div className="w-7">
-                    <Image src="/images/logo/ferrarilogo.webp" />
+                <td>
+                  <div className="flex justify-center">
+                    <Image
+                      style={{ width: 30, height: 30 }}
+                      src="/images/logo/ferrarilogo.webp"
+                    />
                   </div>
                 </td>
                 <td>275</td>
@@ -78,15 +86,18 @@ const driversRanking = () => {
               <tr>
                 <td>4</td>
                 <td>🇬🇧</td>
-                <td>RUSSELL</td>
-                <td>
+                <td className="flex justify-start gap-3">
                   <div className="w-7">
                     <Image src="/images/pilots/russell.webp" />
                   </div>
+                  RUSSELL
                 </td>
-                <td className="flex justify-center">
-                  <div className="w-7">
-                    <Image src="/images/logo/mercedeslogo.webp" />
+                <td>
+                  <div className="flex justify-center">
+                    <Image
+                      style={{ width: 30, height: 30 }}
+                      src="/images/logo/mercedeslogo.webp"
+                    />
                   </div>
                 </td>
                 <td>231</td>
@@ -96,15 +107,18 @@ const driversRanking = () => {
               <tr>
                 <td>5</td>
                 <td>🇬🇧</td>
-                <td>HAMILTON</td>
-                <td>
+                <td className="flex justify-start gap-3">
                   <div className="w-7">
                     <Image src="/images/pilots/hamilton.webp" />
                   </div>
+                  HAMILTON
                 </td>
-                <td className=" flex justify-center">
-                  <div className="w-7">
-                    <Image src="/images/logo/mercedeslogo.webp" />
+                <td>
+                  <div className="flex justify-center">
+                    <Image
+                      style={{ width: 30, height: 30 }}
+                      src="/images/logo/mercedeslogo.webp"
+                    />
                   </div>
                 </td>
                 <td>216</td>
@@ -114,15 +128,18 @@ const driversRanking = () => {
               <tr>
                 <td>6</td>
                 <td>🇪🇸</td>
-                <td>SAINZ</td>
-                <td>
+                <td className="flex justify-start gap-3">
                   <div className="w-7">
                     <Image src="/images/pilots/sainz.webp" />
                   </div>
+                  SAINZ
                 </td>
-                <td className="flex justify-center">
-                  <div className="w-7">
-                    <Image src="/images/logo/ferrarilogo.webp" />
+                <td>
+                  <div className="flex justify-center">
+                    <Image
+                      style={{ width: 30, height: 30 }}
+                      src="/images/logo/ferrarilogo.webp"
+                    />
                   </div>
                 </td>
                 <td>212</td>
@@ -132,15 +149,18 @@ const driversRanking = () => {
               <tr>
                 <td>7</td>
                 <td>🇬🇧</td>
-                <td>NORRIS</td>
-                <td>
+                <td className="flex justify-start gap-3">
                   <div className="w-7">
                     <Image src="/images/pilots/norris.webp" />
                   </div>
+                  NORRIS
                 </td>
-                <td className="flex justify-center">
-                  <div className="w-7">
-                    <Image src="/images/logo/mclarenlogo.webp" />
+                <td>
+                  <div className="flex justify-center">
+                    <Image
+                      style={{ width: 30, height: 30 }}
+                      src="/images/logo/mclarenlogo.webp"
+                    />
                   </div>
                 </td>
                 <td>111</td>
@@ -150,17 +170,21 @@ const driversRanking = () => {
               <tr>
                 <td>8</td>
                 <td>🇫🇷</td>
-                <td>OCON</td>
-                <td>
+                <td className="flex justify-start gap-3">
                   <div className="w-7">
                     <Image src="/images/pilots/ocon.webp" />
                   </div>
+                  OCON
                 </td>
-                <td className="flex justify-center">
-                  <div className="w-7">
-                    <Image src="/images/logo/alpinelogo.webp" />
+                <td>
+                  <div className="flex justify-center">
+                    <Image
+                      style={{ width: 30, height: 30 }}
+                      src="/images/logo/alpinelogo.webp"
+                    />
                   </div>
                 </td>
+
                 <td>82</td>
               </tr>
             </tbody>{" "}
@@ -168,33 +192,39 @@ const driversRanking = () => {
               <tr>
                 <td>9</td>
                 <td>🇪🇸</td>
-                <td>ALONSO</td>
-                <td>
+                <td className="flex justify-start gap-3">
                   <div className="w-7">
                     <Image src="/images/pilots/alonso.webp" />
                   </div>
+                  ALONSO
                 </td>
-                <td className="flex justify-center">
-                  <div className="w-7">
-                    <Image src="/images/logo/alpinelogo.webp" />
+                <td>
+                  <div className="flex justify-center">
+                    <Image
+                      style={{ width: 30, height: 30 }}
+                      src="/images/logo/alpinelogo.webp"
+                    />
                   </div>
                 </td>
-                <td>231</td>
+                <td>81</td>
               </tr>
             </tbody>{" "}
             <tbody>
               <tr>
                 <td>10</td>
                 <td>🇫🇮</td>
-                <td>BOTTAS</td>
-                <td>
+                <td className="flex justify-start gap-3">
                   <div className="w-7">
                     <Image src="/images/pilots/bottas.webp" />
                   </div>
+                  BOTTAS
                 </td>
-                <td className="flex justify-center">
-                  <div className="w-7">
-                    <Image src="/images/logo/alfaromeologo.webp" />
+                <td>
+                  <div className="flex justify-center">
+                    <Image
+                      style={{ width: 30, height: 30 }}
+                      src="/images/logo/alfaromeologo.webp"
+                    />
                   </div>
                 </td>
                 <td>47</td>
@@ -204,15 +234,18 @@ const driversRanking = () => {
               <tr>
                 <td>11</td>
                 <td>🇩🇪</td>
-                <td>VETTEL</td>
-                <td>
+                <td className="flex justify-start gap-3">
                   <div className="w-7">
                     <Image src="/images/pilots/vettel.webp" />
                   </div>
+                  VETTEL
                 </td>
-                <td className="flex justify-center">
-                  <div className="w-7">
-                    <Image src="/images/logo/astonmartinlogo.webp" />
+                <td>
+                  <div className="flex justify-center">
+                    <Image
+                      style={{ width: 30, height: 30 }}
+                      src="/images/logo/astonmartinlogo.webp"
+                    />
                   </div>
                 </td>
                 <td>36</td>
@@ -222,15 +255,18 @@ const driversRanking = () => {
               <tr>
                 <td>12</td>
                 <td>🇦🇺</td>
-                <td>RICCIARDO</td>
-                <td>
+                <td className="flex justify-start gap-3">
                   <div className="w-7">
                     <Image src="/images/pilots/ricciardo.webp" />
                   </div>
+                  RICCIARDO
                 </td>
-                <td className="flex justify-center">
-                  <div className="w-7">
-                    <Image src="/images/logo/mclarenlogo.webp" />
+                <td>
+                  <div className="flex justify-center">
+                    <Image
+                      style={{ width: 30, height: 30 }}
+                      src="/images/logo/mclarenlogo.webp"
+                    />
                   </div>
                 </td>
                 <td>35</td>
@@ -240,15 +276,18 @@ const driversRanking = () => {
               <tr>
                 <td>13</td>
                 <td>🇩🇰</td>
-                <td>MAGNUSSEN</td>
-                <td>
+                <td className="flex justify-start gap-3">
                   <div className="w-7">
                     <Image src="/images/pilots/magnussen.webp" />
                   </div>
+                  MAGNUSSEN
                 </td>
-                <td className="flex justify-center">
-                  <div className="w-7">
-                    <Image src="/images/logo/haaslogo.webp" />
+                <td>
+                  <div className="flex justify-center">
+                    <Image
+                      style={{ width: 30, height: 30 }}
+                      src="/images/logo/haaslogo.webp"
+                    />
                   </div>
                 </td>
                 <td>24</td>
@@ -258,15 +297,18 @@ const driversRanking = () => {
               <tr>
                 <td>14</td>
                 <td>🇫🇷</td>
-                <td>GASLY</td>
-                <td>
+                <td className="flex justify-start gap-3">
                   <div className="w-7">
                     <Image src="/images/pilots/gasly.webp" />
                   </div>
+                  GASLY
                 </td>
-                <td className="flex justify-center">
-                  <div className="w-7">
-                    <Image src="/images/logo/alphataurilogo.webp" />
+                <td>
+                  <div className="flex justify-center">
+                    <Image
+                      style={{ width: 30, height: 30 }}
+                      src="/images/logo/alphataurilogo.webp"
+                    />
                   </div>
                 </td>
                 <td>23</td>
@@ -276,15 +318,18 @@ const driversRanking = () => {
               <tr>
                 <td>15</td>
                 <td>🇨🇦</td>
-                <td>STROLL</td>
-                <td>
+                <td className="flex justify-start gap-3">
                   <div className="w-7">
                     <Image src="/images/pilots/stroll.webp" />
                   </div>
+                  STROLL
                 </td>
-                <td className="flex justify-center">
-                  <div className="w-7">
-                    <Image src="/images/logo/astonmartinlogo.webp" />
+                <td>
+                  <div className="flex justify-center">
+                    <Image
+                      style={{ width: 30, height: 30 }}
+                      src="/images/logo/haaslogo.webp"
+                    />
                   </div>
                 </td>
                 <td>13</td>
@@ -294,17 +339,21 @@ const driversRanking = () => {
               <tr>
                 <td>16</td>
                 <td>🇩🇪</td>
-                <td>SCHUMACHER</td>
-                <td>
+                <td className="flex justify-start gap-3">
                   <div className="w-7">
                     <Image src="/images/pilots/schumacher.webp" />
                   </div>
+                  SCHUMACHER
                 </td>
-                <td className="flex justify-center">
-                  <div className="w-7">
-                    <Image src="/images/logo/haaslogo.webp" />
+                <td>
+                  <div className="flex justify-center">
+                    <Image
+                      style={{ width: 30, height: 30 }}
+                      src="/images/logo/haaslogo.webp"
+                    />
                   </div>
                 </td>
+
                 <td>12</td>
               </tr>
             </tbody>{" "}
@@ -312,15 +361,18 @@ const driversRanking = () => {
               <tr>
                 <td>17</td>
                 <td>🇯🇵</td>
-                <td>TSUNODA</td>
-                <td>
+                <td className="flex justify-start gap-3">
                   <div className="w-7">
                     <Image src="/images/pilots/tsunoda.webp" />
                   </div>
+                  TSUNODA
                 </td>
-                <td className="flex justify-center">
-                  <div className="w-7">
-                    <Image src="/images/logo/alphataurilogo.webp" />
+                <td>
+                  <div className="flex justify-center">
+                    <Image
+                      style={{ width: 30, height: 30 }}
+                      src="/images/logo/alphataurilogo.webp"
+                    />
                   </div>
                 </td>
                 <td>12</td>
@@ -330,15 +382,18 @@ const driversRanking = () => {
               <tr>
                 <td>18</td>
                 <td>🇨🇳</td>
-                <td>ZHOU</td>
-                <td>
+                <td className="flex justify-start gap-3">
                   <div className="w-7">
                     <Image src="/images/pilots/zhou.webp" />
                   </div>
+                  ZHOU
                 </td>
-                <td className="flex justify-center">
-                  <div className="w-7">
-                    <Image src="/images/logo/alfaromeologo.webp" />
+                <td>
+                  <div className="flex justify-center">
+                    <Image
+                      style={{ width: 30, height: 30 }}
+                      src="/images/logo/alfaromeologo.webp"
+                    />
                   </div>
                 </td>
                 <td>6</td>
@@ -348,15 +403,18 @@ const driversRanking = () => {
               <tr>
                 <td>19</td>
                 <td>🇹🇭</td>
-                <td>ALBON</td>
-                <td>
+                <td className="flex justify-start gap-3">
                   <div className="w-7">
                     <Image src="/images/pilots/albon.webp" />
                   </div>
+                  ALBON
                 </td>
-                <td className="flex justify-center">
-                  <div className="w-7">
-                    <Image src="/images/logo/williamslogo.webp" />
+                <td>
+                  <div className="flex justify-center">
+                    <Image
+                      style={{ width: 30, height: 30 }}
+                      src="/images/logo/williamslogo.webp"
+                    />
                   </div>
                 </td>
                 <td>4</td>
@@ -366,15 +424,18 @@ const driversRanking = () => {
               <tr>
                 <td>20</td>
                 <td>🇨🇦</td>
-                <td>LATIFI</td>
-                <td>
+                <td className="flex justify-start gap-3">
                   <div className="w-7">
                     <Image src="/images/pilots/latifi.webp" />
                   </div>
+                  LATIFI
                 </td>
-                <td className="flex justify-center">
-                  <div className="w-7">
-                    <Image src="/images/logo/williamslogo.webp" />
+                <td>
+                  <div className="flex justify-center">
+                    <Image
+                      style={{ width: 30, height: 30 }}
+                      src="/images/logo/williamslogo.webp"
+                    />
                   </div>
                 </td>
                 <td>2</td>
@@ -384,15 +445,18 @@ const driversRanking = () => {
               <tr>
                 <td>21</td>
                 <td>🇹🇭</td>
-                <td>DE VRIES</td>
-                <td>
+                <td className="flex justify-start gap-3">
                   <div className="w-7">
-                    <Image src="/images/pilots/" />
+                    <Image src="/images/pilots/devries.webp" />
                   </div>
+                  DE VRIES
                 </td>
-                <td className="flex justify-center">
-                  <div className="w-7">
-                    <Image src="/images/logo/williamslogo.webp" />
+                <td>
+                  <div className="flex justify-center">
+                    <Image
+                      style={{ width: 30, height: 30 }}
+                      src="/images/logo/williamslogo.webp"
+                    />
                   </div>
                 </td>
                 <td>2</td>
@@ -402,15 +466,18 @@ const driversRanking = () => {
               <tr>
                 <td>22</td>
                 <td>🇩🇪</td>
-                <td>HULKENBGER</td>
-                <td>
+                <td className="flex justify-start gap-3">
                   <div className="w-7">
-                    <Image src="/images/pilots/" />
+                    <Image src="/images/pilots/hulkenbger.webp" />
                   </div>
+                  HULKENBGER
                 </td>
-                <td className="flex justify-center">
-                  <div className="w-7">
-                    <Image src="/images/logo/astonmartinlogo.webp" />
+                <td>
+                  <div className="flex justify-center">
+                    <Image
+                      style={{ width: 30, height: 30 }}
+                      src="/images/logo/astonmartinlogo.webp"
+                    />
                   </div>
                 </td>
                 <td>4</td>
