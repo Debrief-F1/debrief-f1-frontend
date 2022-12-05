@@ -172,7 +172,7 @@ const driversRanking = () => {
                 <td>🇫🇷</td>
                 <td className="flex justify-start gap-3">
                   <div className="w-7">
-                    <Image src="/images/pilots/norris.webp" />
+                    <Image src="/images/pilots/ocon.webp" />
                   </div>
                   OCON
                 </td>
@@ -206,7 +206,7 @@ const driversRanking = () => {
                     />
                   </div>
                 </td>
-                <td>231</td>
+                <td>81</td>
               </tr>
             </tbody>{" "}
             <tbody>

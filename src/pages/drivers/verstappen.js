@@ -79,7 +79,7 @@ const verstappen = () => {
                 <div className="w-7">
                   <Image src="/images/logo/redbulllogo.webp" />
                 </div>
-                REDBULLS
+                REDBULL
               </td>
               <td className="text-center">1</td>
               <td className="text-center">429</td>
@@ -96,7 +96,7 @@ const verstappen = () => {
                 <div className="w-7">
                   <Image src="/images/logo/redbulllogo.webp" />
                 </div>
-                REDBULLS
+                REDBULL
               </td>
               <td className="text-center">1</td>
               <td className="text-center">395</td>

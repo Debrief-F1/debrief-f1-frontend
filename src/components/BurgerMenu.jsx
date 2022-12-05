@@ -24,7 +24,7 @@ const BurgerMenu = () => {
       <button
         onClick={handle}
         className="text-3xl
-        cursor-pointer  "
+        cursor-pointer"
       >
         <Bars3Icon className="w-6 h-6 mt-5" />
       </button>

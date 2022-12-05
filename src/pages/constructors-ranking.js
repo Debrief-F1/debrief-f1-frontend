@@ -14,7 +14,7 @@ const constructorsRanking = () => {
               <tr className="border-2 bg-gray-500">
                 <th className="border-2">POS</th>
                 <th className="border-2">CONSTRUCTORS</th>
-                <th className="border-2">IMG</th>
+                <th className="border-2 w-36">IMG</th>
                 <th className="border-2">PTS</th>
               </tr>
             </thead>
