@@ -72,7 +72,7 @@ const circuitSakhir = () => {
             <thead className="flex">
               <tr className="flex flex-col">
                 <th className="bg-gray-300 italic">
-                  🇶🇦 CIRCUIT INTERNATIONAL DE SAKHIRS
+                  🇶🇦 CIRCUIT INTERNATIONAL DE SAKHIR
                 </th>
                 <td>
                   <div>
