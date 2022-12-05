@@ -7,8 +7,6 @@ import validationSchema1 from "@/components/Validateur1"
 import { useAppContext } from "@/components/AppContext"
 import Link from "@/components/Link"
 import { BiShowAlt, BiLowVision } from "react-icons/bi"
-import Footer from "@/components/Footer"
-import ImageSrc from "@/components/ImageSrc"
 
 const initialValues = {
   emailOrUsername: "",
@@ -34,7 +32,7 @@ const Inscription = () => {
 
         if (jwt) {
           setSession(jwt)
-          router.push("/home")
+          router.push("/")
 
           return
         }
@@ -59,12 +57,16 @@ const Inscription = () => {
   }
 
   return (
-    <div className="h-screen flex flex-col">
-      <div className=" grow flex flex-col items-center bg-gradient-to-b from-gray-100 to-gray-500  rounded-md border-2 border-indigo-600 ">
-        <div className="py-10">
-          <ImageSrc src="/images/logo/F1.png" className="w-48 h-15" />
+    <div className="h-screen">
+      <div className=" h-full flex flex-col items-center bg-gradient-to-b from-gray-100 to-gray-500  rounded-md border-2 border-indigo-600 ">
+        <div className="">
+          <img
+            className="w-64 h-32"
+            src="https://www.pngmart.com/files/10/Formula-1-Logo-PNG-File.png"
+            alt="logo f1"
+          />
         </div>
-        <div className="bg-white p-10  rounded-xl shadow-lg shadow-white">
+        <div className="bg-white p-10 mt-20 rounded-xl shadow-lg shadow-white">
           <h1 className=" text-center text-4xl font-bold mb-5  bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-violet-900 ">
             Sign-In
           </h1>
@@ -99,11 +101,11 @@ const Inscription = () => {
 
               <div className="flex flex-col">
                 <label>Mot de passe *:</label>
-                <div className="flex items-center justify-between border-2 border-black rounded bg-white">
+                <div className="flex items-center justify-between border-2 px-2 border-black rounded bg-white">
                   <Field
                     type={visible ? "text" : "password"}
                     name="password"
-                    className=" px-2 w-full"
+                    className=""
                   />
                   {visible ? (
                     <span onClick={handleVesionOn}>
@@ -146,7 +148,6 @@ const Inscription = () => {
           </Formik>
         </div>
       </div>
-      <Footer />
     </div>
   )
 }

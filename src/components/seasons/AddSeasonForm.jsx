@@ -13,7 +13,6 @@ const initialValues = {
 const AddSeasonForm = () => {
   const { seasons, addSeasons } = useSeasonsContext()
   const [errors, setErrors] = useState([])
-  const [isCreated, setIsCreated] = useState(false)
   const handleSubmit = useCallback(
     async ({ name, year }, { resetForm }) => {
       setErrors([])
@@ -27,8 +26,7 @@ const AddSeasonForm = () => {
         })
         addSeasons(...result)
         resetForm()
-        setIsCreated(true)
-        // throw alert("season added succefly")
+        throw alert("season added succefly")
       } catch (err) {
         if (err instanceof AxiosError && err.response?.data?.error) {
           setErrors(err.response.data.error)
@@ -50,11 +48,6 @@ const AddSeasonForm = () => {
             <p key={error}>{error}</p>
           ))}
         </div>
-      ) : null}
-      {isCreated ? (
-        <p className="rounded-lg border-4 border-blue-600 mb-4 text-xl text-center p-4">
-          Season added succefly
-        </p>
       ) : null}
 
       <Formik initialValues={initialValues} onSubmit={handleSubmit}>
@@ -93,7 +86,7 @@ const AddSeasonForm = () => {
             >
               cree
             </button>
-            <Link href="/admin" className="hover:underline pt-2">
+            <Link href="/" className="hover:underline pt-2">
               return
             </Link>
           </div>

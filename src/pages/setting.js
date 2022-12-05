@@ -54,7 +54,7 @@ const Settings = () => {
                 <div className="flex gap-5 justify-center">
                   <Link
                     className="mt-5 p-2 text font-bold text-white bg-blue-500 active:bg-blue-400 rounded "
-                    href="/users/user-update"
+                    href="/users/user-patch"
                   >
                     modify{" "}
                   </Link>

@@ -30,9 +30,6 @@ export const CircuitsContextProvider = (props) => {
     })()
   }, [addCircuits, setCountCircuits])
 
-  //=========
-
-  //=========
   const deleteCircuit = useCallback(async (circuitId) => {
     await api.delete(`/circuits/${circuitId}`)
     setCircuits((previous) =>
