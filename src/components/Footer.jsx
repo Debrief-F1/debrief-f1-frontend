@@ -10,15 +10,13 @@ const Footer = () => {
           <BiHome className="w-[50px] h-[50px] pl-4" />
         </Link>{" "}
       </h1>
-      <h1 className="">
-        <Link href="/page1">
+      <h1>
+        <Link href="/">
           <FaCar className="w-[40px] h-[40px] pt-2" />
         </Link>{" "}
       </h1>
-      <h1 className=" font-bold">
-        <Link href="/page2">page2</Link>{" "}
-      </h1>
-      <h1 className="">
+
+      <h1>
         <Link href="/setting">
           <BiCog className="w-[50px] h-[50px] pr-4" />
         </Link>{" "}

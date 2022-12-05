@@ -1,7 +1,7 @@
 import React, { useCallback, useState } from "react"
-import { Bars3Icon } from "@heroicons/react/24/solid"
 import Link from "@/components/Link"
 import classNames from "classnames"
+import { GrMenu } from "react-icons/gr"
 
 const links = [
   { children: "Last Race", href: "/last-race" },
@@ -26,7 +26,7 @@ const BurgerMenu = () => {
         className="text-3xl
         cursor-pointer"
       >
-        <Bars3Icon className="w-6 h-6 mt-5" />
+        <GrMenu className="w-6 h-6 mt-7 ml-6" />
       </button>
       <ul
         className={classNames(
