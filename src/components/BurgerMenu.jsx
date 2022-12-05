@@ -9,7 +9,7 @@ const links = [
   { children: "Drivers Ranking", href: "/drivers-ranking" },
   { children: "Constructors", href: "/constructor" },
   { children: "Drivers", href: "/driver" },
-  { children: "Circuits", href: "/map" },
+  { children: "Circuits", href: "/maps" },
   { children: "Settings", href: "/" },
 ]
 
@@ -38,7 +38,7 @@ const BurgerMenu = () => {
           <li
             key={linkProps.href}
             className="mr-4
-            text-xl  my-7"
+            text-xl my-7"
           >
             <Link className="text-white" {...linkProps} />
           </li>

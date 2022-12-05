@@ -8,17 +8,17 @@ const driver = () => {
         className="
       border-2 border-black rounded-lg text-center text-white italic font-bold bg-black"
       >
-        <h1>Pilotes</h1>
+        <h1>Circuits</h1>
       </div>
       <ul className="underline m-3">
         <li>
-          <Link href="/drivers/verstappen">MAX VERSTAPPEN 🇳🇱</Link>
+          <Link href="/maps/circuit-melbourne">MELBOURNE</Link>
         </li>
         <li>
-          <Link href="/drivers/hamilton">LEWIS HAMILTON 🇬🇧</Link>
+          <Link href="/maps/circuit-monaco">MONACO</Link>
         </li>
         <li>
-          <Link href="/drivers/alonso">FERNANDO ALONSO 🇪🇸</Link>
+          <Link href="/maps/circuit-sakhir">SAKHIR</Link>
         </li>
       </ul>
     </Page>
