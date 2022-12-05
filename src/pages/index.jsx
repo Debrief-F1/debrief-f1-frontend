@@ -38,7 +38,7 @@ const App = () => {
           <div className="flex items-center">
             <ImageSrc src="/images/drapaux/1.gif" className="w-20 h-10" />
             <h1 className="text-center font-bold text-4xl md:text-6xl bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-violet-900">
-              DEBRIEF-F1
+              DEBRIEF-F1-
             </h1>
             <ImageSrc src="/images/drapaux/2.gif" className="w-20 h-10" />
           </div>
