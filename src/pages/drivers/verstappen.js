@@ -1,7 +1,7 @@
 import Page from "@/components/Page"
 import Image from "@/components/Image"
 
-const alonso = () => {
+const verstappen = () => {
   return (
     <Page>
       <div className="flex justify-between border-2 border-black rounded-lg text-white italic font-bold bg-black">
@@ -146,4 +146,4 @@ const alonso = () => {
   )
 }
 
-export default alonso
+export default verstappen
