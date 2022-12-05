@@ -26,7 +26,7 @@ const CountdownRace = () => {
 
   return (
     <div className="flex flex-col w-[400px]">
-      <div className="bg-gray-400 shadow-lg mx-auto w-96 max-w-full text-sm pointer-events-auto bg-clip-padding rounded-lg block">
+      <div className="bg-gray-400 shadow-lg w-full text-sm pointer-events-auto bg-clip-padding rounded-lg border-2 border-black block">
         <div className="p-2 border-b border-black rounded-t-lg">
           <p className="flex items-center text-center font-bold text-black">
             Next Race : Brasil 🇧🇷

@@ -34,22 +34,20 @@ const Header = () => {
       {session ? (
         <div className="flex items-center ">
           <h1>
-            Bonjour{" "}
+            Bonjour
             <span className="text-blue-600 pr-2"> {session.user.username}</span>
           </h1>
           <button onClick={handelClick}>
-            {" "}
-            <VscSignOut className="w-[50px] h-[50px] pt-2 pr-2" />
+            <VscSignOut className="w-7 h-7 mr-6" />
           </button>
         </div>
       ) : (
         <h1 className=" font-bold  px-4 pt-2 border-b-2">
           <Link href="/users/sign-up">
             <AiOutlineUser className="w-[35px] h-[35px]" />
-          </Link>{" "}
+          </Link>
         </h1>
       )}
-      ;
     </header>
   )
 }

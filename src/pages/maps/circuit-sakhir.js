@@ -61,7 +61,7 @@ const circuitSakhir = () => {
             <div className="flex justify-end">
               <Image
                 style={{ width: 435, height: 300 }}
-                src="/images/circuits/sakhir.svg.png"
+                src="/images/circuits/sakhir.jpg"
               />
             </div>
           </div>
@@ -78,7 +78,7 @@ const circuitSakhir = () => {
                   <div>
                     <Image
                       style={{ width: 435, height: 300 }}
-                      src="/images/circuits/sakhir.jpg"
+                      src="/images/circuits/sakhircircuit.png"
                     />
                   </div>
                 </td>
