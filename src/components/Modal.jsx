@@ -1,5 +1,7 @@
+const { default: classNames } = require("classnames")
+
 const Modal = (props) => {
-  const { open, onClose, children } = props
+  const { open, children, className } = props
 
   if (!open) {
     return null
@@ -7,16 +9,13 @@ const Modal = (props) => {
 
   return (
     <>
-      <div className="fixed inset-0 w-full  h-screen overflow-auto  rounded-md border-2 border-indigo-600   ">
-        <div className="">
-          {children}
-          <button
-            className=" absolute top-0 right-0 px-2 m-2 w-16 text-white font-bold bg-blue-500 active:bg-blue-700 rounded-xl "
-            onClick={onClose}
-          >
-            ferme
-          </button>
-        </div>
+      <div
+        className={classNames(
+          "fixed inset-0 w-full object-center h-screen overflow-auto rounded-md border-2 border-indigo-600   ",
+          className
+        )}
+      >
+        <div>{children}</div>
       </div>
     </>
   )

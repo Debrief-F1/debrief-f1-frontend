@@ -1,4 +1,6 @@
 import Button from "@/components/Button"
+import Footer from "@/components/Footer"
+import ImageSrc from "@/components/ImageSrc"
 import Link from "@/components/Link"
 import api from "@/services/api"
 import { Field, Form, Formik } from "formik"
@@ -7,29 +9,19 @@ import { useState } from "react"
 const initialValues = {
   email: "",
 }
-// http://localhost:3000/users/user-patch    lien pour le patch
 const PasswordForget = () => {
-  const [user, setUser] = useState([])
   const [isactive, setIsactive] = useState(false)
-
   const handleSubmit = async ({ email }) => {
     if (!email) {
       return
     }
 
     setIsactive(true)
-
     const {
       data: { result },
     } = await api.get(`/users/${email}`)
-    setUser(result)
-    const nom = result.username
-    const prenom = result.displayName
-    console.log(nom, prenom)
 
     if (result.length !== 0) {
-      console.log(email)
-
       try {
         const { data } = await api.post(`/api/email`, {
           email,
@@ -38,51 +30,22 @@ const PasswordForget = () => {
       } catch (err) {
         console.log("errorrrrrr")
       }
-
-      // const data = {
-      //   nom: nom,
-      //   prenom: prenom,
-      //   email: email,
-      //   contenu: "Pour réinitialiser votre mot de passe clic ",
-      // }
-
-      // const response = await fetch("api/contact", {
-      //   method: "POST",
-      //   headers: {
-      //     "Content-Type": "application/json",
-      //   },
-      //   body: JSON.stringify(data),
-      // })
-      // console.log(JSON.stringify(data))
-
-      // const result = await response.json()
-
-      // if (!response.ok) {
-      //   console.log("erroooooor")
-      // } else {
-      //   console.log("ok")
-      // }
     }
   }
 
   return (
-    <div className="h-screen">
-      <div className=" h-full flex flex-col items-center bg-gradient-to-b from-gray-100 to-gray-500  rounded-md border-2 border-indigo-600 ">
-        <div className="">
-          <img
-            className="w-64 h-32"
-            src="https://www.pngmart.com/files/10/Formula-1-Logo-PNG-File.png"
-            alt="logo f1"
-          />
+    <div className="h-screen flex flex-col">
+      <div
+        className=" grow flex flex-col items-center bg-gradient-to-b from-gray-100
+       to-gray-500  rounded-md border-2 border-indigo-600 "
+      >
+        <div className="w-64 h-32 flex items-center justify-center">
+          <ImageSrc src="/images/logo/F1.png" className="w-48 h-15" />
         </div>
-        <div className="bg-white p-10 mt-20 text-center rounded-xl shadow-lg shadow-white">
-          {/* {errors.length ? (
-            <div className="rounded-lg border-4 border-red-600 mb-4 flex flex-col gap-4 p-4">
-              {errors.map((error) => (
-                <p key={error}>{error}</p>
-              ))}
-            </div>
-          ) : null} */}
+        <div
+          className=" md:w-[75%] bg-white p-10 mt-20 text-center rounded-xl shadow-lg
+         shadow-white"
+        >
           {!isactive && (
             <Formik initialValues={initialValues} onSubmit={handleSubmit}>
               <Form className="flex flex-col items-center gap-10">
@@ -113,6 +76,7 @@ const PasswordForget = () => {
           )}
         </div>
       </div>
+      <Footer />
     </div>
   )
 }

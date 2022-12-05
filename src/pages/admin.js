@@ -5,15 +5,36 @@ const { default: Page } = require("@/components/Page")
 const Admin = () => {
   return (
     <Page>
-      <div className="flex flex-col gap-3 items-center">
-        <h1>
-          Pour voir le liste des utulisateurs clic sur:
-          <Link className="underline px-2" href="/users/get-users">
-            get users
-          </Link>
-        </h1>
-        <Link href="/circuits">Circuits</Link>
-        <Link href="/seasons">Seasons</Link>
+      <div className="flex flex-col gap-3 items-center p-10">
+        <h1 className="text-3xl font-bold mb-10 ">ADMINISTRATEUR</h1>
+        <Link
+          className="underline p-2 bg-blue-400 active:bg-blue-600 border-2 border-slate-600 rounded-xl w-[50%]  text-center "
+          href="/users/get-users"
+        >
+          get users
+        </Link>
+        <Link
+          className="underline p-2 bg-blue-400 active:bg-blue-600 border-2
+        border-slate-600 rounded-xl w-[50%]  text-center "
+          href="/circuits"
+        >
+          Circuits
+        </Link>
+
+        <Link
+          className="underline p-2 bg-blue-400 active:bg-blue-600 border-2
+        border-slate-600 rounded-xl w-[50%]  text-center "
+          href="/seasons"
+        >
+          Seasons
+        </Link>
+        <Link
+          className="underline p-2 bg-blue-400 active:bg-blue-600 border-2
+        border-slate-600 rounded-xl w-[50%]  text-center "
+          href="/races"
+        >
+          Races
+        </Link>
       </div>
     </Page>
   )

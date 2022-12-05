@@ -6,10 +6,11 @@ import Modal from "@/components/Modal.jsx"
 import Link from "@/components/Link"
 import api from "@/services/api"
 import { BiShowAlt, BiLowVision } from "react-icons/bi"
-
 import validationSchema from "@/components/Validateur"
 import Button from "@/components/Button"
-// import { useAppContext } from "@/components/AppContext"
+import Footer from "@/components/Footer"
+import ImageSrc from "@/components/ImageSrc"
+import UserPatch from "./user-patch"
 
 const initialValues = {
   username: "",
@@ -19,52 +20,27 @@ const initialValues = {
   confirmPassword: "",
   acceptTerms: false,
 }
-
 const SignUp = () => {
   const [openModal, setOpenModal] = useState(false)
   const [visible, setVisiblity] = useState(false)
   const [visible1, setVisiblity1] = useState(false)
-
   const handleClick = () => {
     setOpenModal(true)
   }
-  const closeModal = () => {
+  const onClose = () => {
     setOpenModal(false)
   }
-
   const router = useRouter()
-  // const { setSession } = useAppContext()
   const [errors, setErrors] = useState([])
-
-  // const signIn = useCallback(
-  //   async ({ emailOrUsername, password }) => {
-  //     const {
-  //       data: {
-  //         result: [{ jwt }],
-  //       },
-  //     } = await api.post("/sign-in", { emailOrUsername, password })
-
-  //     if (jwt) {
-  //       setSession(jwt)
-
-  //       return
-  //     }
-  //   },
-  //   [setSession]
-  // )
 
   const handleSubmit = useCallback(
     async ({ email, username, displayName, password }) => {
-      console.log(123)
       setErrors([])
 
       try {
         const {
           data: { count },
         } = await api.post("/users", { email, username, displayName, password })
-
-        // const emailOrUsername = email
-        // signIn({ emailOrUsername, password })
 
         if (count) {
           router.push("/users/sign-in")
@@ -99,14 +75,10 @@ const SignUp = () => {
   }
 
   return (
-    <div className="h-screen">
-      <div className=" h-full flex flex-col items-center bg-gradient-to-b from-gray-100 to-gray-500  rounded-md border-2 border-indigo-600 ">
-        <div className="">
-          <img
-            className="w-64 h-32"
-            src="https://www.pngmart.com/files/10/Formula-1-Logo-PNG-File.png"
-            alt="logo f1"
-          />
+    <div className="h-screen flex flex-col">
+      <div className=" flex flex-col grow items-center bg-gradient-to-b from-gray-100 to-gray-500  rounded-md border-2 border-indigo-600 ">
+        <div className=" py-10">
+          <ImageSrc src="/images/logo/F1.png" className="w-48 h-15" />
         </div>
         <div>
           <div className="text-center">
@@ -179,11 +151,11 @@ const SignUp = () => {
 
                 <div className="flex flex-col">
                   <label>Mot de passe *:</label>
-                  <div className="flex items-center justify-between border-2 px-2 border-black rounded bg-white">
+                  <div className="flex items-center justify-between border-2  border-black rounded bg-white">
                     <Field
                       type={visible ? "text" : "password"}
                       name="password"
-                      className=""
+                      className=" px-2"
                     />
                     {visible ? (
                       <span onClick={handleVisionOff}>
@@ -204,11 +176,11 @@ const SignUp = () => {
 
                 <div className="flex flex-col">
                   <label>Confirmer le mot de passe *:</label>
-                  <div className="flex items-center justify-between border-2 px-2 border-black rounded bg-white">
+                  <div className="flex items-center justify-between border-2 border-black rounded bg-white">
                     <Field
                       type={visible1 ? "text" : "password"}
                       name="confirmPassword"
-                      className=" border-transparent"
+                      className=" px-2"
                     />
                     {visible1 ? (
                       <span onClick={handleVisionOff1}>
@@ -258,25 +230,36 @@ const SignUp = () => {
                 <div className="flex gap-3 my-3">
                   <Button
                     type="submit"
-                    // className="p-2 text font-bold text-white bg-blue-500 active:bg-blue-400 rounded"
                     className="text-center  focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50"
                     disabled={!formik.isValid || formik.isSubmitted}
                   >
                     S'inscrire
                   </Button>
 
-                  <Link href="/" className="hover:underline pt-2">
+                  <Link href="/home" className="hover:underline pt-2">
                     continue sans inscription
                   </Link>
                 </div>
               </Form>
             )}
           </Formik>
+          <Link href="/users/user-patch">userpach</Link>
+          <Link href="/users/user-update">userupdate</Link>
         </div>
-        <Modal open={openModal} onClose={closeModal}>
-          <div className=" bg-gradient-to-b from-pink-200 to-violet-900 p-3 ">
-            <h1 className="font-bold text-2xl p-3">Condition d'utilisation:</h1>
-            <p className="text-red-300">
+        <Modal open={openModal}>
+          <div className=" h-screen bg-gradient-to-b from-pink-200 to-violet-900 p-3 ">
+            <div className="flex justify-between">
+              <h1 className="font-bold text-2xl p-3">
+                Condition d'utilisation:
+              </h1>
+              <button
+                className=" px-2 m-2 w-16 h-10 text-white font-bold bg-blue-500 active:bg-blue-700 rounded-xl "
+                onClick={onClose}
+              >
+                ferme
+              </button>
+            </div>
+            <p className="">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti,
               inventore ipsam ad a laudantium consectetur recusandae dolores ab
               ullam aliquid mollitia dolorem enim perspiciatis voluptas ut
@@ -339,6 +322,7 @@ const SignUp = () => {
           </div>
         </Modal>
       </div>
+      <Footer />
     </div>
   )
 }

@@ -30,19 +30,31 @@ const GetRaces = () => {
   return (
     <div className=" flex flex-col">
       <h1 className="text-3xl font-bold">Races List:{count}</h1>
-      <div className=" bg-slate-500 overflow-y-auto mb-10 h-80">
+      <div className="  overflow-y-auto mb-10 h-80">
         {races.length ? (
           <ul>
+            <li className="p-3 flex justify-between text-white sticky top-0 border-2 border-black bg-slate-700">
+              <p>id</p>
+              <p>nom</p>
+              <p>date</p>
+              <p>seasonId</p>
+              <p>circuitId</p>
+            </li>
             {races.map((race) => (
-              <li className="p-3 flex justify-between" key={race.id}>
-                <div>
-                  <span className="px-2 bg-blue-600">{race.id}</span>
-                  <span className="px-2 bg-yellow-600">{race.name}</span>
-                  <span className="px-2 bg-green-600">{race.raceDate}</span>
-                  <span className="px-2 bg-red-600">{race.seasonId}</span>
-                  <span className="px-2 bg-purple-600">{race.circuitId}</span>
-                  {}
-                </div>
+              <li
+                className="p-3 flex justify-between border-2 border-black odd:bg-slate-200"
+                key={race.id}
+              >
+                <span className="px-2 ">{race.id}</span>
+                <span className="px-2 ">{race.name}</span>
+                <span className="px-2 ">
+                  {new Intl.DateTimeFormat("fr").format(
+                    new Date(race.raceDate)
+                  )}
+                </span>
+                <span className="px-2 ">{race.seasonId}</span>
+                <span className="px-2 ">{race.circuitId}</span>
+                {}
               </li>
             ))}
           </ul>

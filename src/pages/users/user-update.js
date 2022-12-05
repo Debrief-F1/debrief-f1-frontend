@@ -4,30 +4,52 @@ import { Formik, Field, Form, ErrorMessage } from "formik"
 import { useRouter } from "next/router.js"
 import api from "@/services/api.js"
 import { AxiosError } from "axios"
-import validationSchema from "@/components/Validateur.jsx"
+import Link from "@/components/Link"
+import { useAppContext } from "@/components/AppContext"
+import { BiLowVision, BiShowAlt } from "react-icons/bi"
 import ImageSrc from "@/components/ImageSrc"
+// import validationSchema from "@/components/Validateur.jsx"
+// import { useAppContext } from "@/components/AppContext"
 
 const initialValues = {
-  email: "",
-  password: "",
-  confirmPassword: "",
+  username1: "",
+  displayName1: "",
+  email1: "",
+  password1: "",
 }
-
 const UserPatch = () => {
+  const {
+    state: { session },
+  } = useAppContext()
+  const { setSession } = useAppContext()
+
+  // console.log(session.user.id)
+
   const router = useRouter()
   const [errors, setErrors] = useState([])
+  const [visible, setVisiblity] = useState(false)
+
   const handleSubmit = useCallback(
-    async ({ password, email }) => {
+    async ({ email1, username1, displayName1, password1 }) => {
       setErrors([])
+      const userId = session.user.id
+
+      if (!email1 | !username1 | !displayName1 | !password1) {
+        return
+      }
 
       try {
         const {
           data: { result },
-        } = await api.patch(`/users/password/${email}`, {
-          password,
+        } = await api.patch(`/users/${userId}`, {
+          email1,
+          username1,
+          displayName1,
+          password1,
         })
 
         if (result.length !== 0) {
+          setSession()
           router.push("/users/sign-in")
 
           return
@@ -45,6 +67,13 @@ const UserPatch = () => {
     [router]
   )
 
+  const handleVisionOff = () => {
+    setVisiblity(true)
+  }
+  const handleVesionOn = () => {
+    setVisiblity(false)
+  }
+
   return (
     <div className="h-screen">
       <div className=" h-full flex flex-col items-center bg-gradient-to-b from-gray-100 to-gray-500  rounded-md border-2 border-indigo-600 ">
@@ -54,7 +83,7 @@ const UserPatch = () => {
         <div>
           <div className="text-center">
             <h1 className="text-center text-4xl font-bold mb-5  bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-violet-900 ">
-              Ubdate password
+              Ubdate
             </h1>
           </div>
           {errors.length ? (
@@ -67,15 +96,15 @@ const UserPatch = () => {
 
           <Formik
             initialValues={initialValues}
-            validationSchema={validationSchema}
+            // validationSchema={validationSchema}
             onSubmit={handleSubmit}
           >
-            <Form className="flex flex-col gap-3">
+            <Form>
               <div className="flex flex-col">
-                <label>Confirm your email :</label>
+                <label>email :</label>
                 <Field
                   type="email"
-                  name="email"
+                  name="email1"
                   className="border-2 border-black px-2 rounded"
                 />
                 <ErrorMessage
@@ -85,40 +114,71 @@ const UserPatch = () => {
                 />
               </div>
               <div className="flex flex-col">
-                <label>New password :</label>
+                <label>Username :</label>
                 <Field
-                  type="password"
-                  name="password"
+                  type="text"
+                  name="username1"
+                  className="border-2 border-black px-2 rounded "
+                />
+                <ErrorMessage
+                  name="username"
+                  component="small"
+                  className="text-red-600 "
+                />
+              </div>
+
+              <div className="flex flex-col">
+                <label>DisplayName :</label>
+                <Field
+                  type="text"
+                  name="displayName1"
                   className="border-2 border-black px-2 rounded"
                 />
                 <ErrorMessage
-                  name="password"
+                  name="displayName"
                   component="small"
                   className="text-red-600"
                 />
               </div>
 
               <div className="flex flex-col">
-                <label>Confirm new password :</label>
-                <Field
-                  type="password"
-                  name="confirmPassword"
-                  className="border-2 border-black px-2 rounded"
-                />
+                <label> password :</label>
+                <div className="flex">
+                  <Field
+                    type={visible ? "text" : "password"}
+                    name="password1"
+                    className="border-2 border-black px-2 rounded"
+                  />
+                  {visible ? (
+                    <span onClick={handleVesionOn}>
+                      <BiLowVision className=" w-6 h-6 hover:text-red-600 hover:cursor-pointer" />
+                    </span>
+                  ) : (
+                    <span onClick={handleVisionOff}>
+                      <BiShowAlt className=" w-6 h-6 hover:text-red-600 hover:cursor-pointer" />
+                    </span>
+                  )}
+                </div>
                 <ErrorMessage
-                  name="confirmPassword"
+                  name="password"
                   component="small"
                   className="text-red-600"
                 />
               </div>
 
-              <div className="flex justify-center">
+              <div className="flex gap-3 my-3 justify-between">
                 <button
                   type="submit"
-                  className="p-2 w-[75%] text font-bold text-white bg-blue-500 active:bg-blue-400 rounded "
+                  className="p-2 text font-bold text-white bg-blue-500 active:bg-blue-400 rounded "
                 >
                   Confirm
                 </button>
+                <Link
+                  className="p-2 text font-bold text-white bg-blue-500 active:bg-blue-400 rounded"
+                  href="/setting"
+                >
+                  Annule
+                </Link>
               </div>
             </Form>
           </Formik>
