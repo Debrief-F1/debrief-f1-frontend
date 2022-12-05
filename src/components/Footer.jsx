@@ -6,7 +6,7 @@ const Footer = () => {
   return (
     <footer className="flex w-full justify-between sticky bottom-0 bg-gradient-to-b from-gray-100 to-gray-500">
       <h1>
-        <Link href="/home">
+        <Link href="/homepage">
           <BiHome className="w-[50px] h-[50px] pl-4" />
         </Link>{" "}
       </h1>
