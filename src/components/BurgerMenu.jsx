@@ -10,12 +10,18 @@ const BurgerMenu = () => {
     state: { session },
   } = useAppContext()
   const [menuOpen, setMenuOpen] = useState(false)
-  const handleToggleMenu = useCallback(() => setMenuOpen((state) => !state), [])
+  const handle = useCallback(() => {
+    setMenuOpen((x) => !x)
+  }, [])
 
   return (
-    <>
-      <button className="text-xl px-4" onClick={handleToggleMenu}>
-        <GrMenu className="w-8 h-8" />
+    <div>
+      <button
+        onClick={handle}
+        className="text-3xl
+        cursor-pointer"
+      >
+        <Bars3Icon className="w-6 h-6 mt-5" />
       </button>
       <ul
         className={`flex flex-col absolute  bg-gradient-to-r  transition-all duration-500 z-50 ease-in ${
@@ -75,7 +81,8 @@ const BurgerMenu = () => {
           </div>
         </button>
       </ul>
-    </>
+    </div>
   )
 }
+
 export default BurgerMenu
