@@ -6,20 +6,17 @@ const Footer = () => {
   return (
     <footer className="flex w-full justify-between sticky bottom-0 bg-gradient-to-b from-gray-100 to-gray-500">
       <h1>
-        <Link href="/home">
+        <Link href="/homepage">
           <BiHome className="w-[50px] h-[50px] pl-4" />
         </Link>
       </h1>
       <h1 className="">
-        <Link href="/page1">
+        <Link href="/season-cars">
           <FaCar className="w-[40px] h-[40px] pt-2" />
         </Link>
       </h1>
-      <h1 className=" font-bold">
-        <Link href="/page2">page2</Link>{" "}
-      </h1>
       <h1 className="">
-        <Link href="/setting">
+        <Link href="/settings">
           <BiCog className="w-[50px] h-[50px] pr-4" />
         </Link>
       </h1>

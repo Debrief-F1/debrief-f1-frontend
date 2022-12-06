@@ -48,15 +48,15 @@ const Contact = () => {
           <h1 className="text-3xl font-bold ">Contact Nous</h1>
           {issended && (
             <p className="p-2  border-2 w-80 text-center border-blue-300">
-              Votre message est bien envoyer, nous vous repondrons dans les bref
-              delais
+              Votre message à bien été envoyer, nous vous repondrons dans les
+              plus bref delais
             </p>
           )}
 
           <Formik initialValues={initialValues} onSubmit={handleSubmit}>
             <Form className="flex flex-col gap-5 items-center">
               <div className="flex flex-col pt-3 ">
-                <label>Votre message Mr: {session.user.username}</label>
+                <label>Votre message : {session.user.username}</label>
                 <label>Object</label>
                 <Field
                   className="p-2 border-2 border-black rounded"
@@ -64,7 +64,7 @@ const Contact = () => {
                   name="object"
                   placeholder="object"
                 />
-                <label>Votre message</label>
+                <label>Message</label>
 
                 <Field
                   className="p-2 border-2 border-black rounded"

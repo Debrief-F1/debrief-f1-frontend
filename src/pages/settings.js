@@ -7,7 +7,7 @@ import { useCallback, useState } from "react"
 import { BsExclamationOctagon } from "react-icons/bs"
 import Contact from "./contact"
 
-const Settings = () => {
+const settings = () => {
   const [isactive, setIsactive] = useState(false)
   const {
     state: { session },
@@ -17,7 +17,7 @@ const Settings = () => {
   const handelActive = () => {
     setIsactive(true)
   }
-  const hendelAnnule = () => {
+  const hendelCancel = () => {
     setIsactive(false)
   }
 
@@ -35,7 +35,7 @@ const Settings = () => {
   }, [router, session, setSession])
 
   return (
-    <Page name={Settings}>
+    <Page name={settings}>
       <div className="p-10">
         <h1 className=" text-3xl font-bold mb-10">Settings</h1>
         <div>
@@ -56,14 +56,14 @@ const Settings = () => {
                     className="mt-5 p-2 text font-bold text-white bg-blue-500 active:bg-blue-400 rounded "
                     href="/users/user-update"
                   >
-                    modify{" "}
+                    Modify{" "}
                   </Link>
                   <button
                     className="mt-5 p-2 text font-bold text-white bg-red-600 active:bg-red-300 rounded"
                     isactive={isactive}
                     onClick={handelActive}
                   >
-                    delette
+                    Delete
                   </button>
                 </div>
 
@@ -72,20 +72,20 @@ const Settings = () => {
                     <section className="flex flex-col items-center gap-5 h-64 w-64 mt-[150px] pt-10  bg-gradient-to-b from-red-500 to-pink-500 rounded-2xl">
                       <BsExclamationOctagon className="w-20 h-20" />
                       <p className="text-black font-bold text-2xl pb-2 text-center animate-ping ">
-                        ARE YOU SUR !?
+                        ARE YOU SURE !?
                       </p>
                       <div className="flex gap-5">
                         <button
                           className=" p-2 text font-bold text-white bg-blue-500 active:bg-blue-400 rounded "
-                          onClick={hendelAnnule}
+                          onClick={hendelCancel}
                         >
-                          annule
+                          Cancel
                         </button>
                         <button
                           className=" p-2 text font-bold text-white bg-red-600 active:bg-red-300 rounded"
                           onClick={handelDelete}
                         >
-                          Conferme
+                          Confirm
                         </button>
                       </div>
                     </section>
@@ -96,7 +96,7 @@ const Settings = () => {
           ) : (
             <div>
               <p className="text-red-700 text-3xl font-bold text-center">
-                t'as pas de compte
+                Not registered
               </p>
               <div className="mt-5 flex justify-center">
                 <Link className="bg-blue-500 px-5 py-2" href="/users/sign-up">
@@ -111,4 +111,4 @@ const Settings = () => {
     </Page>
   )
 }
-export default Settings
+export default settings

@@ -5,6 +5,9 @@ import Page from "@/components/Page"
 import LastRaceResult from "@/components/LastRaceResult"
 import LastRaceArticle from "@/components/LastRaceArticle"
 import NewsComponnent from "@/components/NewsComponnent"
+import DriversInfo from "@/components/DriversInfo"
+import { useAppContext } from "@/components/AppContext"
+import Comments from "@/pages/comments"
 
 const articles = [
   {
@@ -25,6 +28,10 @@ const articles = [
 ]
 
 const homepage = () => {
+  const {
+    state: { session },
+  } = useAppContext()
+
   return (
     <Page>
       <div className="flex flex-col xl:flex-row xl:justify-evenly ">
@@ -53,6 +60,13 @@ const homepage = () => {
             <DriversHome />
           </div>
           <ConstructorsHome />
+        </div>
+        <div className="flex flex-col justify-between  items-center  w-full md:w-auto bg-slate-30">
+          <div>
+            <h1 className="text-3xl font-bold pt-10">Top 5 drivers</h1>
+            {session && <DriversInfo />}
+          </div>
+          <div className="">{session && <Comments />}</div>
         </div>
       </div>
     </Page>

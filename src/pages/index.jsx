@@ -69,7 +69,7 @@ const App = () => {
               </Link>
             </div>
             <Link
-              href="/home"
+              href="/homepage"
               className="  active:bg-slate-200 rounded-xl text-center hover:underline"
             >
               Contunue sans S'inscrire
