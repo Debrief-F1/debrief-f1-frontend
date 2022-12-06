@@ -8,6 +8,7 @@ import Link from "@/components/Link"
 import { useAppContext } from "@/components/AppContext"
 import { BiLowVision, BiShowAlt } from "react-icons/bi"
 import ImageSrc from "@/components/ImageSrc"
+import Footer from "@/components/Footer"
 // import validationSchema from "@/components/Validateur.jsx"
 // import { useAppContext } from "@/components/AppContext"
 
@@ -34,7 +35,7 @@ const UserPatch = () => {
       setErrors([])
       const userId = session.user.id
 
-      if (!email1 | !username1 | !displayName1 | !password1) {
+      if (!email1 & !username1 & !displayName1 & !password1) {
         return
       }
 
@@ -184,6 +185,7 @@ const UserPatch = () => {
           </Formik>
         </div>
       </div>
+      <Footer />
     </div>
   )
 }

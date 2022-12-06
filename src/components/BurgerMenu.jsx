@@ -66,10 +66,12 @@ const BurgerMenu = () => {
               </p>
             </li>
             {session && session.user.role === "ADMIN" && (
-              <li className="bg-slate-300 border-double  border-4 border-black  rounded-xl">
-                <p className="p-4 block hover:bg-slate-100 rounded-xl">
-                  <Link href="/admin">Administrateur</Link>
-                </p>
+              <li
+                className="bg-slate-300 hover:bg-slate-100
+               p-4 block  border-double  border-4 border-black
+               rounded-xl"
+              >
+                <Link href="/admin">Administrateur</Link>
               </li>
             )}
           </div>

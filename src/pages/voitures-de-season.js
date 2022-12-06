@@ -1,11 +1,11 @@
 import ImageSrc from "@/components/ImageSrc"
 import Page from "@/components/Page"
 
-const page1 = () => {
+const VoituresSeason = () => {
   return (
     <Page>
       <h1 className="m-[10%] text-center text-3xl font-bold">
-        Voiture de la saison
+        Voiture de la season
       </h1>
       <div className=" flex gap-3 overflow-x-auto ">
         <ImageSrc
@@ -27,4 +27,4 @@ const page1 = () => {
     </Page>
   )
 }
-export default page1
+export default VoituresSeason

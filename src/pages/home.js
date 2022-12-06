@@ -1,6 +1,7 @@
 import { useAppContext } from "@/components/AppContext"
 import DriversInfo from "@/components/DriversInfo"
 import Link from "@/components/Link"
+// import News from "@/components/News"
 import Page from "@/components/Page"
 import Comments from "./comments"
 import Table from "./table"
@@ -35,7 +36,7 @@ const Home = () => {
             </div>
           </div>
           <div className="flex">
-            <div className="bg-red-30 w-[10%]"> hellohello hellohello</div>
+            <div className="bg-red-300">{/* <News /> */}</div>
             <div>
               <h1 className="font-bold text-2xl py-2">lecture de la course!</h1>
               <div className="p-3 ">

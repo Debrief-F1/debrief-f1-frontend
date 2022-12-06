@@ -1,6 +1,7 @@
 import Link from "./Link"
 import { BiHome, BiCog } from "react-icons/bi"
 import { FaCar } from "react-icons/fa"
+import { ImStatsBars } from "react-icons/im"
 
 const Footer = () => {
   return (
@@ -11,12 +12,14 @@ const Footer = () => {
         </Link>{" "}
       </h1>
       <h1 className="">
-        <Link href="/page1">
+        <Link href="/voitures-de-season">
           <FaCar className="w-[40px] h-[40px] pt-2" />
         </Link>{" "}
       </h1>
       <h1 className=" font-bold">
-        <Link href="/page2">page2</Link>{" "}
+        <Link href="/statistique">
+          <ImStatsBars className="w-[40px] h-[40px] pt-2" />
+        </Link>{" "}
       </h1>
       <h1 className="">
         <Link href="/setting">

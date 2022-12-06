@@ -10,7 +10,6 @@ import validationSchema from "@/components/Validateur"
 import Button from "@/components/Button"
 import Footer from "@/components/Footer"
 import ImageSrc from "@/components/ImageSrc"
-import UserPatch from "./user-patch"
 
 const initialValues = {
   username: "",
@@ -243,11 +242,9 @@ const SignUp = () => {
               </Form>
             )}
           </Formik>
-          <Link href="/users/user-patch">userpach</Link>
-          <Link href="/users/user-update">userupdate</Link>
         </div>
         <Modal open={openModal}>
-          <div className=" h-screen bg-gradient-to-b from-pink-200 to-violet-900 p-3 ">
+          <div className=" h-full bg-gradient-to-b from-pink-200 to-violet-700 p-3 ">
             <div className="flex justify-between">
               <h1 className="font-bold text-2xl p-3">
                 Condition d'utilisation:

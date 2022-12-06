@@ -13,7 +13,7 @@ const initialValues = {
   confirmPassword: "",
 }
 
-const UserPatch = () => {
+const PatchPassword = () => {
   const router = useRouter()
   const [errors, setErrors] = useState([])
   const handleSubmit = useCallback(
@@ -128,4 +128,4 @@ const UserPatch = () => {
   )
 }
 
-export default UserPatch
+export default PatchPassword
