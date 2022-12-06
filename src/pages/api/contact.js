@@ -8,7 +8,7 @@ export default function handler(req, res) {
     return
   }
 
-  // Variables
+  Variables
   const { nom, prenom, email, contenu } = req.body
   console.log({ nom, prenom, email, contenu })
 

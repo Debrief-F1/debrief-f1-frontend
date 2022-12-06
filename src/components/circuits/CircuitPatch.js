@@ -1,37 +1,48 @@
 import { Formik, Form, Field, ErrorMessage } from "formik"
-
-import { AxiosError } from "axios"
 import { useCallback, useState } from "react"
 import api from "@/services/api"
+import { AxiosError } from "axios"
 import Link from "@/components/Link"
+import { useCircuitsContext } from "./CircuitsContext"
 
 const initialValues = {
   name: "",
-  raceDate: "",
-  seasonId: "",
-  circuitId: "",
+  location: "",
+  length: "",
+  numberOfTurn: "",
 }
 
-const AddRacesForm = () => {
-  const [races, setRaces] = useState([])
-  const [errors, setErrors] = useState([])
+const CircuitPatch = (props) => {
+  const { circuitId } = props
+  const { circuits, addCircuits } = useCircuitsContext()
 
+  console.log(circuitId)
+  const [errors, setErrors] = useState([])
+  const [isPatched, setIsPatched] = useState(false)
   const handleSubmit = useCallback(
-    async ({ name, raceDate, seasonId, circuitId }, { resetForm }) => {
+    async ({ name1, location1, length1, numberOfTurn1 }, { resetForm }) => {
       setErrors([])
+
+      if (!name1 & !location1 & !length1 & !numberOfTurn1) {
+        // eslint-disable-next-line no-console
+        console.log("ERROR")
+
+        return
+      }
 
       try {
         const {
           data: { result },
-        } = await api.post("/races", {
-          name,
-          raceDate,
-          seasonId,
-          circuitId,
+        } = await api.patch(`/circuits/${circuitId}`, {
+          name1,
+          location1,
+          length1,
+          numberOfTurn1,
         })
-        setRaces(result)
         resetForm()
-        throw alert(`rece: ${name} added succefly`)
+        setIsPatched(true)
+        addCircuits(...result)
+        // throw alert(`circuit ${name} added succefly`)
       } catch (err) {
         if (err instanceof AxiosError && err.response?.data?.error) {
           setErrors(err.response.data.error)
@@ -42,12 +53,12 @@ const AddRacesForm = () => {
         setErrors(["Oops. Something went wrong, please try again."])
       }
     },
-    [setRaces]
+    [addCircuits]
   )
 
   return (
-    <div className=" flex flex-col items-center">
-      <p>Add races</p>
+    <div className="w-80 flex flex-col items-center">
+      <h1 className="text-3xl font-bold mt-5">patch CIRCUITS</h1>
       {errors.length ? (
         <div className="rounded-lg border-4 border-red-600 mb-4 flex flex-col gap-4 p-4">
           {errors.map((error) => (
@@ -55,14 +66,19 @@ const AddRacesForm = () => {
           ))}
         </div>
       ) : null}
+      {isPatched ? (
+        <p className="rounded-lg border-4 border-blue-600 mb-4 text-xl text-center p-4">
+          circuit patched succefly
+        </p>
+      ) : null}
 
       <Formik initialValues={initialValues} onSubmit={handleSubmit}>
-        <Form>
+        <Form className="flex flex-col items-center gap-2">
           <div className="flex flex-col">
             <label>name*:</label>
             <Field
               type="text"
-              name="name"
+              name="name1"
               className="border-2 border-black px-2 rounded"
             />
             <ErrorMessage
@@ -73,59 +89,54 @@ const AddRacesForm = () => {
           </div>
 
           <div className="flex flex-col">
-            <label>raceDate *:</label>
+            <label>location *:</label>
             <Field
-              type="date"
-              name="raceDate"
+              type="text"
+              name="location1"
               className="border-2 border-black px-2 rounded"
             />
             <ErrorMessage
-              name="raceDate"
+              name="location"
               component="small"
               className="text-red-600"
             />
           </div>
           <div className="flex flex-col">
-            <label>seasonId *:</label>
+            <label>length *:</label>
             <Field
-              type="number"
-              name="seasonId"
+              type="text"
+              name="length1"
               className="border-2 border-black px-2 rounded"
             />
             <ErrorMessage
-              name="seasonId"
+              name="length"
               component="small"
               className="text-red-600"
             />
           </div>
           <div className="flex flex-col">
-            <label>circuitId *:</label>
+            <label>numberOfTurn *:</label>
             <Field
-              type="number"
-              name="circuitId"
+              type="text"
+              name="numberOfTurn1"
               className="border-2 border-black px-2 rounded"
             />
             <ErrorMessage
-              name="circuitId"
+              name="numberOfTurn"
               component="small"
               className="text-red-600"
             />
           </div>
-          <div className="flex gap-3 my-3">
-            <button
-              type="submit"
-              className="p-2 text font-bold text-white bg-blue-500 active:bg-blue-400 rounded"
-            >
-              cree
-            </button>
-            <Link href="/admin" className="hover:underline pt-2">
-              return
-            </Link>
-          </div>
+          <button
+            type="submit"
+            className="p-2 w-[75%]  text font-bold text-white bg-blue-500 active:bg-blue-400 rounded"
+          >
+            patch
+          </button>
         </Form>
       </Formik>
     </div>
   )
 }
 
-export default AddRacesForm
+export default CircuitPatch

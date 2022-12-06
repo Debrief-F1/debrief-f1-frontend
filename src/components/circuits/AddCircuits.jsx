@@ -3,7 +3,9 @@ import { useCallback, useState } from "react"
 import Link from "../Link"
 import api from "@/services/api"
 import { AxiosError } from "axios"
+import * as Yup from "yup"
 import { useCircuitsContext } from "./CircuitsContext"
+import validationSchema from "../Validateur"
 
 const initialValues = {
   name: "",
@@ -12,9 +14,17 @@ const initialValues = {
   numberOfTurn: "",
 }
 
+const ValidationSchema = Yup.object().shape({
+  name: Yup.string().required("is required"),
+  location: Yup.string().required("is required"),
+  length: Yup.number().required("is required"),
+  numberOfTurn: Yup.number().required("is required"),
+})
+
 const AddCircuitsForm = () => {
   const { circuits, addCircuits } = useCircuitsContext()
   const [errors, setErrors] = useState([])
+  const [isAdded, setIsAdded] = useState(false)
   const handleSubmit = useCallback(
     async ({ name, location, length, numberOfTurn }, { resetForm }) => {
       setErrors([])
@@ -30,7 +40,8 @@ const AddCircuitsForm = () => {
         })
         addCircuits(...result)
         resetForm()
-        throw alert(`circuit ${name} added succefly`)
+        setIsAdded(true)
+        // throw alert(`circuit ${name} added succefly`)
       } catch (err) {
         if (err instanceof AxiosError && err.response?.data?.error) {
           setErrors(err.response.data.error)
@@ -45,7 +56,8 @@ const AddCircuitsForm = () => {
   )
 
   return (
-    <div className="">
+    <div className="w-80">
+      <h1 className="text-3xl font-bold mt-5">ADD CIRCUITS</h1>
       {errors.length ? (
         <div className="rounded-lg border-4 border-red-600 mb-4 flex flex-col gap-4 p-4">
           {errors.map((error) => (
@@ -53,8 +65,17 @@ const AddCircuitsForm = () => {
           ))}
         </div>
       ) : null}
+      {isAdded ? (
+        <p className="rounded-lg border-4 border-blue-600 mb-4 text-xl text-center p-4">
+          circuit added succefly
+        </p>
+      ) : null}
 
-      <Formik initialValues={initialValues} onSubmit={handleSubmit}>
+      <Formik
+        initialValues={initialValues}
+        onSubmit={handleSubmit}
+        validationSchema={ValidationSchema}
+      >
         <Form>
           <div className="flex flex-col">
             <label>name*:</label>
@@ -116,7 +137,7 @@ const AddCircuitsForm = () => {
             >
               cree
             </button>
-            <Link href="/" className="hover:underline pt-2">
+            <Link href="/admin" className="hover:underline pt-2">
               return
             </Link>
           </div>

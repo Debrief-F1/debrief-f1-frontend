@@ -16,7 +16,7 @@ const LastRace = () => {
                 height=""
                 src="https://www.youtube.com/embed/3X0mA0Nn96Y"
                 title="Le film de la course - GP du Japon"
-                frameborder="0"
+                frameBorder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowfullscreen
               ></iframe>
