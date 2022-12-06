@@ -40,10 +40,10 @@ const Header = () => {
           </button>
         </div>
       ) : (
-        <h1 className=" font-bold  px-4 pt-2 border-b-2">
+        <h1 className=" font-bold my-auto mr-4">
           <Link href="/users/sign-up">
-            <AiOutlineUser className="w-[35px] h-[35px]" />
-          </Link>{" "}
+            <AiOutlineUser className="w-7 h-7" />
+          </Link>
         </h1>
       )}
       ;
