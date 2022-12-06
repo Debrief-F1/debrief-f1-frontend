@@ -47,7 +47,7 @@ const homepage = () => {
             <LastRaceArticle />
           </div>
         </div>
-        <div className="grid w-full md:w-fit grid-cols-1 md:grid-cols-2 xl:grid-cols-1 gap-2 mt-2 mx-auto xl:mx-0 lg:gap-x-32 xl:gap-x-0">
+        <div className="grid w-full md:w-fit grid-cols-1 md:grid-cols-2 xl:grid-cols-1 gap-2 mt-2 mx-auto xl:mx-0 lg:gap-x-[8.75rem] xl:gap-x-0">
           <div className="grid grid-cols-1 gap-2">
             <CountdownRace />
             <DriversHome />
