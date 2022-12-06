@@ -316,7 +316,7 @@ const SignUp = () => {
             <p>
               Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quas
               modi obcaecati quae, ipsam praesentium minus! Odio, modi. Repellat
-              itaque soluta architecto atque, eum illum veniam vitae vero
+              itaque soluta fffffarchitecto atque, eum illum veniam vitae vero
               dignissimos deserunt nemo!
             </p>
           </div>
