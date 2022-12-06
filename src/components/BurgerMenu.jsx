@@ -1,5 +1,4 @@
 import { useCallback, useState } from "react"
-// import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid"
 import Link from "next/link"
 import { GrMenu } from "react-icons/gr"
 import { GiCrossMark } from "react-icons/gi"
