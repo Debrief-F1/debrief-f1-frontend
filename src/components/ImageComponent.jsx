@@ -1,6 +1,6 @@
 import classNames from "classnames"
 
-const Image = (props) => {
+const ImageComponent = (props) => {
   const { src, style, className } = props
 
   return (
@@ -8,4 +8,4 @@ const Image = (props) => {
   )
 }
 
-export default Image
+export default ImageComponent

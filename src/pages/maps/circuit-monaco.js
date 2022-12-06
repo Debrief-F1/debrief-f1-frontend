@@ -1,5 +1,5 @@
 import Page from "@/components/Page"
-import Image from "@/components/Image"
+import ImageComponent from "@/components/ImageComponent"
 
 const circuitMonaco = () => {
   return (
@@ -60,7 +60,7 @@ const circuitMonaco = () => {
               </table>
             </div>
             <div className="flex justify-end">
-              <Image
+              <ImageComponent
                 style={{ width: 435, height: 300 }}
                 src="/images/circuits/monaco.jpg"
               />
@@ -77,7 +77,7 @@ const circuitMonaco = () => {
                 </th>
                 <td>
                   <div>
-                    <Image
+                    <ImageComponent
                       style={{ width: 435, height: 300 }}
                       src="/images/circuits/monacocircuit.png"
                     />

@@ -1,5 +1,5 @@
 import Page from "@/components/Page"
-import Image from "@/components/Image"
+import ImageComponent from "@/components/ImageComponent"
 
 const alonso = () => {
   return (
@@ -10,7 +10,7 @@ const alonso = () => {
           <div className="flex">
             <p>TEAM : </p>
             <p className="w-7">
-              <Image src="/images/logo/alpinelogo.webp" />
+              <ImageComponent src="/images/logo/alpinelogo.webp" />
             </p>
             ALPINE
           </div>
@@ -20,7 +20,7 @@ const alonso = () => {
           <p>TAILLE : 1M71</p>
         </div>
         <div className="h-full flex flex-wrap">
-          <Image
+          <ImageComponent
             style={{ width: 200, height: 150 }}
             src="/images/pilots/alonso.webp"
           />
@@ -77,7 +77,7 @@ const alonso = () => {
               <td>2022</td>
               <td className="flex justify-center">
                 <div className="w-7">
-                  <Image src="/images/logo/alpinelogo.webp" />
+                  <ImageComponent src="/images/logo/alpinelogo.webp" />
                 </div>
                 ALPINE
               </td>
@@ -94,7 +94,7 @@ const alonso = () => {
               <td>2021</td>
               <td className="flex justify-center">
                 <div className="w-7">
-                  <Image src="/images/logo/alpinelogo.webp" />
+                  <ImageComponent src="/images/logo/alpinelogo.webp" />
                 </div>
                 ALPINE
               </td>
@@ -111,7 +111,7 @@ const alonso = () => {
               <td>2018</td>
               <td className="flex justify-center">
                 <div className="w-7">
-                  <Image src="/images/logo/mclarenlogo.webp" />
+                  <ImageComponent src="/images/logo/mclarenlogo.webp" />
                 </div>
                 MCLAREN
               </td>
@@ -128,7 +128,7 @@ const alonso = () => {
               <td>2017</td>
               <td className="flex justify-center">
                 <div className="w-7">
-                  <Image src="/images/logo/mclarenlogo.webp" />
+                  <ImageComponent src="/images/logo/mclarenlogo.webp" />
                 </div>
                 MCLAREN
               </td>

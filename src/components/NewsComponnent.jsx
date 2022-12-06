@@ -1,4 +1,4 @@
-import Image from "./Image"
+import ImageComponent from "./ImageComponent"
 import Link from "./Link"
 
 const NewsComponnent = (props) => {
@@ -14,7 +14,7 @@ const NewsComponnent = (props) => {
             </h1>
           </Link>
           <p className="text-xs text-red-600 pl-3">{article.date}</p>
-          <Image
+          <ImageComponent
             style={{ width: 64, height: 64 }}
             src={`/images/logo/${article.name}logo.webp`}
             className="ml-auto mr-4"

@@ -1,6 +1,6 @@
 // ES7 React/Redux/GraphQL/React-Native snippets
 //rafce
-import ImageSrc from "@/components/ImageSrc"
+import ImageComponent from "@/components/ImageComponent"
 import Link from "@/components/Link"
 import React, { useEffect, useState } from "react"
 
@@ -36,11 +36,11 @@ const App = () => {
       <div className="w-screen h-screen p-5   bg-gradient-to-b from-gray-100 to-gray-500  relative bg-red-30">
         <div className="flex flex-col items-center md:pt-20 text-center">
           <div className="flex items-center">
-            <ImageSrc src="/images/drapaux/1.gif" className="w-20 h-10" />
+            <ImageComponent src="/images/drapaux/1.gif" className="w-20 h-10" />
             <h1 className="text-center font-bold text-4xl md:text-6xl bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-violet-900">
               DEBRIEF-F1
             </h1>
-            <ImageSrc src="/images/drapaux/2.gif" className="w-20 h-10" />
+            <ImageComponent src="/images/drapaux/2.gif" className="w-20 h-10" />
           </div>
           <p className="md:w-[75%] my-5">
             DEBRIEF-F1 EST L'APPLICATION QUI VOUS PROPOSE LES COURCES DE FORMULA
@@ -76,7 +76,7 @@ const App = () => {
             </Link>
           </div>
           <div className="w-96 h-80  flex mt-3  items-center  rotate45 motion-safe:animate-bounc 3s ">
-            <ImageSrc src={image} className="" />
+            <ImageComponent src={image} className="" />
           </div>
         </div>
       </section>

@@ -1,5 +1,5 @@
 import Page from "@/components/Page"
-import Image from "@/components/Image"
+import ImageComponent from "@/components/ImageComponent"
 
 const circuitSakhir = () => {
   return (
@@ -59,7 +59,7 @@ const circuitSakhir = () => {
               </table>
             </div>
             <div className="flex justify-end">
-              <Image
+              <ImageComponent
                 style={{ width: 435, height: 300 }}
                 src="/images/circuits/sakhir.jpg"
               />
@@ -76,7 +76,7 @@ const circuitSakhir = () => {
                 </th>
                 <td>
                   <div>
-                    <Image
+                    <ImageComponent
                       style={{ width: 435, height: 300 }}
                       src="/images/circuits/sakhircircuit.png"
                     />

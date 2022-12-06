@@ -1,5 +1,5 @@
 import Page from "@/components/Page"
-import Image from "@/components/Image"
+import ImageComponent from "@/components/ImageComponent"
 
 const hamilton = () => {
   return (
@@ -10,7 +10,7 @@ const hamilton = () => {
           <div className="flex">
             <p>TEAM : </p>
             <p className="w-7">
-              <Image src="/images/logo/mercedeslogo.webp" />
+              <ImageComponent src="/images/logo/mercedeslogo.webp" />
             </p>
             MERCEDES
           </div>
@@ -20,7 +20,7 @@ const hamilton = () => {
           <p>TAILLE : 1M74</p>
         </div>
         <div className="h-full flex flex-wrap">
-          <Image
+          <ImageComponent
             style={{ width: 200, height: 150 }}
             src="/images/pilots/hamilton.webp"
           />
@@ -77,7 +77,7 @@ const hamilton = () => {
               <td>2022</td>
               <td className="flex justify-center">
                 <div className="w-7">
-                  <Image src="/images/logo/mercedeslogo.webp" />
+                  <ImageComponent src="/images/logo/mercedeslogo.webp" />
                 </div>
                 MERCEDES
               </td>
@@ -94,7 +94,7 @@ const hamilton = () => {
               <td>2021</td>
               <td className="flex justify-center">
                 <div className="w-7">
-                  <Image src="/images/logo/mercedeslogo.webp" />
+                  <ImageComponent src="/images/logo/mercedeslogo.webp" />
                 </div>
                 MERCEDES
               </td>
@@ -111,7 +111,7 @@ const hamilton = () => {
               <td>2020</td>
               <td className="flex justify-center">
                 <div className="w-7">
-                  <Image src="/images/logo/mercedeslogo.webp" />
+                  <ImageComponent src="/images/logo/mercedeslogo.webp" />
                 </div>
                 MERCEDES
               </td>
@@ -128,7 +128,7 @@ const hamilton = () => {
               <td>2019</td>
               <td className="flex justify-center">
                 <div className="w-7">
-                  <Image src="/images/logo/mercedeslogo.webp" />
+                  <ImageComponent src="/images/logo/mercedeslogo.webp" />
                 </div>
                 MERCEDES
               </td>

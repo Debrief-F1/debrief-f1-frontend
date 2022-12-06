@@ -1,4 +1,4 @@
-import Image from "@/components/Image"
+import ImageComponent from "@/components/ImageComponent"
 
 const ConstructorsHome = () => {
   return (
@@ -20,13 +20,13 @@ const ConstructorsHome = () => {
             <td>1</td>
             <td className="flex justify-start gap-3">
               <div className="w-7">
-                <Image src="/images/pilots/verstappen.webp" />
+                <ImageComponent src="/images/pilots/verstappen.webp" />
               </div>
               VERSTAPPEN
             </td>
             <td>
               <div className="flex justify-center">
-                <Image
+                <ImageComponent
                   style={{ width: 30, height: 30 }}
                   src="/images/logo/redbulllogo.webp"
                 />
@@ -38,13 +38,13 @@ const ConstructorsHome = () => {
             <td>2</td>
             <td className="flex justify-start gap-3">
               <div className="w-7 flex">
-                <Image src="/images/pilots/leclerc.webp" />
+                <ImageComponent src="/images/pilots/leclerc.webp" />
               </div>
               LECLERC
             </td>
             <td>
               <div className="flex justify-center">
-                <Image
+                <ImageComponent
                   style={{ width: 30, height: 30 }}
                   src="/images/logo/ferrarilogo.webp"
                 />
@@ -56,13 +56,13 @@ const ConstructorsHome = () => {
             <td>3</td>
             <td className="flex justify-start gap-3">
               <div className="w-7">
-                <Image src="/images/pilots/perez.webp" />
+                <ImageComponent src="/images/pilots/perez.webp" />
               </div>
               PEREZ
             </td>
             <td>
               <div className="flex justify-center">
-                <Image
+                <ImageComponent
                   style={{ width: 30, height: 30 }}
                   src="/images/logo/mercedeslogo.webp"
                 />
@@ -74,13 +74,13 @@ const ConstructorsHome = () => {
             <td>4</td>
             <td className="flex justify-start gap-3">
               <div className="w-7">
-                <Image src="/images/pilots/sainz.webp" />
+                <ImageComponent src="/images/pilots/sainz.webp" />
               </div>
               SAINZ
             </td>
             <td>
               <div className="flex justify-center">
-                <Image
+                <ImageComponent
                   style={{ width: 30, height: 30 }}
                   src="/images/logo/alpinelogo.webp"
                 />
@@ -92,13 +92,13 @@ const ConstructorsHome = () => {
             <td>5</td>
             <td className="flex justify-start gap-3">
               <div className="w-7">
-                <Image src="/images/pilots/russell.webp" />
+                <ImageComponent src="/images/pilots/russell.webp" />
               </div>
               RUSSELL
             </td>
             <td>
               <div className="flex justify-center">
-                <Image
+                <ImageComponent
                   style={{ width: 30, height: 30 }}
                   src="/images/logo/mclarenlogo.webp"
                 />

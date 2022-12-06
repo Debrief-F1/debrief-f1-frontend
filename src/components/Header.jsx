@@ -4,7 +4,7 @@ import BurgerMenu from "./BurgerMenu"
 import { VscSignOut } from "react-icons/vsc"
 import { AiOutlineUser } from "react-icons/ai"
 import Link from "./Link"
-import Image from "@/components/Image"
+import Image from "@/components/ImageComponent"
 
 const Header = () => {
   const router = useRouter()

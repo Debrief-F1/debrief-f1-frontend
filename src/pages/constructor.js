@@ -1,5 +1,6 @@
 import Page from "@/components/Page"
-import Image from "@/components/Image"
+import Image from "@/components/ImageComponent"
+import ImageComponent from "@/components/ImageComponent"
 
 const constructor = () => {
   return (
@@ -8,7 +9,7 @@ const constructor = () => {
         <div className="flex flex-col ml-1">
           <div className="flex">
             <p className="w-7">
-              <Image src="/images/logo/redbulllogo.webp" />
+              <ImageComponent src="/images/logo/redbulllogo.webp" />
             </p>
             <h1 className="text-2xl flex flex-col">RED BULL RACING</h1>
           </div>
@@ -20,7 +21,7 @@ const constructor = () => {
           <p>Jüri VIPS🇪🇪</p>
         </div>
         <div className="h-full flex flex-wrap">
-          <Image
+          <ImageComponent
             style={{ width: 350, height: 100 }}
             src="/images/cars/redbullcar.webp"
           />

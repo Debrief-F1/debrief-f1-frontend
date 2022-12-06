@@ -1,4 +1,4 @@
-import ImageSrc from "@/components/ImageSrc"
+import ImageComponent from "@/components/ImageComponent"
 import Page from "@/components/Page"
 
 const seasonCars = () => {
@@ -8,21 +8,21 @@ const seasonCars = () => {
         Voiture de la saison
       </h1>
       <div className=" flex gap-3 overflow-x-auto ">
-        <ImageSrc
+        <ImageComponent
           className=" w-64 h-64 hover:w-80 hover:h-80"
           src="/images/voiture/1.png"
         />
 
-        <ImageSrc
+        <ImageComponent
           className=" w-64 h-64  hover:w-80 hover:h-80"
           src="/images/voiture/2.png"
         />
 
-        <ImageSrc className=" w-64 h-64" src="/images/voiture/5.png" />
+        <ImageComponent className=" w-64 h-64" src="/images/voiture/5.png" />
 
-        <ImageSrc className=" w-64 h-64" src="/images/voiture/8.png" />
+        <ImageComponent className=" w-64 h-64" src="/images/voiture/8.png" />
 
-        <ImageSrc className=" w-64 h-64" src="/images/voiture/11.png" />
+        <ImageComponent className=" w-64 h-64" src="/images/voiture/11.png" />
       </div>
     </Page>
   )
