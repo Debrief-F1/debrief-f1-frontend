@@ -93,13 +93,29 @@ const SignUp = () => {
               </Link>
             </p>
           </div>
-          {errors.length ? (
-            <div className="rounded-lg border-4 border-red-600 mb-4 flex flex-col gap-4 p-4">
-              {errors.map((error) => (
-                <p key={error}>{error}</p>
-              ))}
+          <div>
+            <div className="text-center">
+              <h1 className="text-center text-4xl font-bold mb-5  bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-violet-900 ">
+                Sign-Up
+              </h1>
+              <p>
+                deja inscrit?{" "}
+                <Link
+                  className="hover:underline font-bold"
+                  href="/users/sign-in"
+                >
+                  {" "}
+                  se connecter
+                </Link>
+              </p>
             </div>
-          ) : null}
+            {errors.length ? (
+              <div className="rounded-lg border-4 border-red-600 mb-4 flex flex-col gap-4 p-4">
+                {errors.map((error) => (
+                  <p key={error}>{error}</p>
+                ))}
+              </div>
+            ) : null}
 
           <Formik
             initialValues={initialValues}
@@ -153,26 +169,67 @@ const SignUp = () => {
                   <label>Mot de passe *:</label>
                   <div className="flex items-center justify-between border-2  border-black rounded bg-white">
                     <Field
-                      type={visible ? "text" : "password"}
+                      type="email"
+                      name="email"
+                      className="border-2 border-black px-2 rounded"
+                    />
+                    <ErrorMessage
+                      name="email"
+                      component="small"
+                      className="text-red-600"
+                    />
+                  </div>
+                  <div className="flex flex-col">
+                    <label>Username *:</label>
+                    <Field
+                      type="text"
+                      name="username"
+                      className="border-2 border-black px-2 rounded "
+                    />
+                    <ErrorMessage
+                      name="username"
+                      component="small"
+                      className="text-red-600 "
+                    />
+                  </div>
+
+                  <div className="flex flex-col">
+                    <label>DisplayName *:</label>
+                    <Field
+                      type="text"
+                      name="displayName"
+                      className="border-2 border-black px-2 rounded"
+                    />
+                    <ErrorMessage
+                      name="displayName"
+                      component="small"
+                      className="text-red-600"
+                    />
+                  </div>
+
+                  <div className="flex flex-col">
+                    <label>Mot de passe *:</label>
+                    <div className="flex items-center justify-between border-2 px-2 border-black rounded bg-white">
+                      <Field
+                        type={visible ? "text" : "password"}
+                        name="password"
+                        className=""
+                      />
+                      {visible ? (
+                        <span onClick={handleVisionOff}>
+                          <BiLowVision className=" w-6 h-6 hover:text-red-600 hover:cursor-pointer" />
+                        </span>
+                      ) : (
+                        <span onClick={handleVisionOn}>
+                          <BiShowAlt className=" w-6 h-6 hover:text-red-600 hover:cursor-pointer" />
+                        </span>
+                      )}
+                    </div>
+                    <ErrorMessage
                       name="password"
                       className=" px-2"
                     />
-                    {visible ? (
-                      <span onClick={handleVisionOff}>
-                        <BiLowVision className=" w-6 h-6 hover:text-red-600 hover:cursor-pointer" />
-                      </span>
-                    ) : (
-                      <span onClick={handleVisionOn}>
-                        <BiShowAlt className=" w-6 h-6 hover:text-red-600 hover:cursor-pointer" />
-                      </span>
-                    )}
                   </div>
-                  <ErrorMessage
-                    name="password"
-                    component="small"
-                    className="text-red-600"
-                  />
-                </div>
 
                 <div className="flex flex-col">
                   <label>Confirmer le mot de passe *:</label>
@@ -182,50 +239,35 @@ const SignUp = () => {
                       name="confirmPassword"
                       className=" px-2"
                     />
-                    {visible1 ? (
-                      <span onClick={handleVisionOff1}>
-                        <BiLowVision className=" w-6 h-6 hover:text-red-600 hover:cursor-pointer" />
-                      </span>
-                    ) : (
-                      <span onClick={handleVisionOn1}>
-                        <BiShowAlt className=" w-6 h-6 hover:text-red-600 hover:cursor-pointer " />
-                      </span>
-                    )}
                   </div>
-                  <ErrorMessage
-                    name="confirmPassword"
-                    component="small"
-                    className="text-red-600"
-                  />
-                </div>
 
-                <div className="flex flex-col">
-                  <div>
-                    <Field
+                  <div className="flex flex-col">
+                    <div>
+                      <Field
+                        name="acceptTerms"
+                        type="checkbox"
+                        className="form-check-input"
+                      />
+                      <label className="form-check-label">
+                        J'ai lu et j'accepte
+                        <span className="underline decoration-solid">
+                          <button
+                            className="underline pl-1"
+                            onClick={handleClick}
+                          >
+                            les conditions
+                          </button>
+                        </span>
+                        <span>*</span>
+                      </label>
+                    </div>
+                    <ErrorMessage
                       name="acceptTerms"
-                      type="checkbox"
-                      className="form-check-input"
+                      component="small"
+                      className="text-red-600"
                     />
-                    <label className="form-check-label">
-                      J'ai lu et j'accepte
-                      <span className="underline decoration-solid">
-                        <button
-                          className="underline pl-1"
-                          onClick={handleClick}
-                        >
-                          les conditions
-                        </button>
-                      </span>
-                      <span>*</span>
-                    </label>
+                    <p className="text-sm"> * champs obligatoire</p>
                   </div>
-                  <ErrorMessage
-                    name="acceptTerms"
-                    component="small"
-                    className="text-red-600"
-                  />
-                  <p className="text-sm"> * champs obligatoire</p>
-                </div>
 
                 <div className="flex gap-3 my-3">
                   <Button
@@ -320,7 +362,74 @@ const SignUp = () => {
               dignissimos deserunt nemo!
             </p>
           </div>
-        </Modal>
+          <Modal open={openModal} onClose={closeModal}>
+            <div className=" bg-gradient-to-b from-pink-200 to-violet-900 p-3 ">
+              <h1 className="font-bold text-2xl p-3">
+                Condition d'utilisation:
+              </h1>
+              <p className="text-red-300">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Deleniti, inventore ipsam ad a laudantium consectetur recusandae
+                dolores ab ullam aliquid mollitia dolorem enim perspiciatis
+                voluptas ut tempora repellat minima iusto?
+              </p>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum
+                officiis quasi totam tempora, dolor deserunt hic voluptates id
+                quos, obcaecati iure eos ipsa officia quidem fuga? Dolor harum
+                commodi rerum?
+              </p>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum
+                dignissimos eveniet mollitia provident soluta eos earum fugiat
+                et molestias illo, eum maxime id ipsa doloribus cumque
+                exercitationem error cupiditate nam?
+              </p>
+              <p>
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quas
+                modi obcaecati quae, ipsam praesentium minus! Odio, modi.
+                Repellat itaque soluta architecto atque, eum illum veniam vitae
+                vero dignissimos deserunt nemo!
+              </p>
+              <p>
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quas
+                modi obcaecati quae, ipsam praesentium minus! Odio, modi.
+                Repellat itaque soluta architecto atque, eum illum veniam vitae
+                vero dignissimos deserunt nemo!
+              </p>
+              <p>
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quas
+                modi obcaecati quae, ipsam praesentium minus! Odio, modi.
+                Repellat itaque soluta architecto atque, eum illum veniam vitae
+                vero dignissimos deserunt nemo!
+              </p>
+              <p>
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quas
+                modi obcaecati quae, ipsam praesentium minus! Odio, modi.
+                Repellat itaque soluta architecto atque, eum illum veniam vitae
+                vero dignissimos deserunt nemo!
+              </p>
+              <p>
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quas
+                modi obcaecati quae, ipsam praesentium minus! Odio, modi.
+                Repellat itaque soluta architecto atque, eum illum veniam vitae
+                vero dignissimos deserunt nemo!
+              </p>
+              <p>
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quas
+                modi obcaecati quae, ipsam praesentium minus! Odio, modi.
+                Repellat itaque soluta architecto atque, eum illum veniam vitae
+                vero dignissimos deserunt nemo!
+              </p>
+              <p>
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quas
+                modi obcaecati quae, ipsam praesentium minus! Odio, modi.
+                Repellat itaque soluta architecto atque, eum illum veniam vitae
+                vero dignissimos deserunt nemo!
+              </p>
+            </div>
+          </Modal>
+        </div>
       </div>
       <Footer />
     </div>

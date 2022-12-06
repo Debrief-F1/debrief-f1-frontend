@@ -69,33 +69,13 @@ const Inscription = () => {
             Sign-In
           </h1>
 
-          {errors.length ? (
-            <div className="rounded-lg border-4 border-red-600 mb-4 flex flex-col gap-4 p-4">
-              {errors.map((error) => (
-                <p key={error}>{error}</p>
-              ))}
-            </div>
-          ) : null}
-
-          <Formik
-            initialValues={initialValues}
-            validationSchema={validationSchema1}
-            onSubmit={handleSubmit}
-          >
-            <Form>
-              <div className="flex flex-col">
-                <label>Email or username *:</label>
-                <Field
-                  type="email"
-                  name="emailOrUsername"
-                  className="border-2 border-black px-2 rounded"
-                />
-                <ErrorMessage
-                  name="emailOrUsername"
-                  component="small"
-                  className="text-red-600"
-                />
+            {errors.length ? (
+              <div className="rounded-lg border-4 border-red-600 mb-4 flex flex-col gap-4 p-4">
+                {errors.map((error) => (
+                  <p key={error}>{error}</p>
+                ))}
               </div>
+            ) : null}
 
               <div className="flex flex-col">
                 <label>Mot de passe *:</label>
@@ -105,45 +85,56 @@ const Inscription = () => {
                     name="password"
                     className=" px-2 w-full"
                   />
-                  {visible ? (
-                    <span onClick={handleVesionOn}>
-                      <BiLowVision className=" w-6 h-6 hover:text-red-600 hover:cursor-pointer" />
-                    </span>
-                  ) : (
-                    <span onClick={handleVisionOff}>
-                      <BiShowAlt className=" w-6 h-6 hover:text-red-600 hover:cursor-pointer" />
-                    </span>
-                  )}{" "}
                 </div>
-                <ErrorMessage
-                  name="password"
-                  component="small"
-                  className="text-red-600"
-                />
-              </div>
 
-              <div className="flex gap-3 my-3">
-                <button
-                  type="submit"
-                  className="p-2 text font-bold text-white bg-blue-500 active:bg-blue-400 rounded"
-                >
-                  sign-in
-                </button>
-                <Link
-                  href="/users/sign-up"
-                  className="p-2 text font-bold text-white bg-blue-500 active:bg-blue-400 rounded hover:underline"
-                >
-                  cree un compte
-                </Link>
-                <Link
-                  href="/password-forget"
-                  className="p-2 text-blue-700 hover:underline"
-                >
-                  mot de passe oublie ?
-                </Link>
-              </div>
-            </Form>
-          </Formik>
+                <div className="flex flex-col">
+                  <label>Mot de passe *:</label>
+                  <div className="flex items-center justify-between border-2 px-2 border-black rounded bg-white">
+                    <Field
+                      type={visible ? "text" : "password"}
+                      name="password"
+                      className=""
+                    />
+                    {visible ? (
+                      <span onClick={handleVesionOn}>
+                        <BiLowVision className=" w-6 h-6 hover:text-red-600 hover:cursor-pointer" />
+                      </span>
+                    ) : (
+                      <span onClick={handleVisionOff}>
+                        <BiShowAlt className=" w-6 h-6 hover:text-red-600 hover:cursor-pointer" />
+                      </span>
+                    )}{" "}
+                  </div>
+                  <ErrorMessage
+                    name="password"
+                    component="small"
+                    className="text-red-600"
+                  />
+                </div>
+
+                <div className="flex gap-3 my-3">
+                  <button
+                    type="submit"
+                    className="p-2 text font-bold text-white bg-blue-500 active:bg-blue-400 rounded"
+                  >
+                    sign-in
+                  </button>
+                  <Link
+                    href="/users/sign-up"
+                    className="p-2 text font-bold text-white bg-blue-500 active:bg-blue-400 rounded hover:underline"
+                  >
+                    cree un compte
+                  </Link>
+                  <Link
+                    href="/password-forget"
+                    className="p-2 text-blue-700 hover:underline"
+                  >
+                    mot de passe oublie ?
+                  </Link>
+                </div>
+              </Form>
+            </Formik>
+          </div>
         </div>
       </div>
       <Footer />
