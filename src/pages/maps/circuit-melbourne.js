@@ -4,23 +4,23 @@ import ImageComponent from "@/components/ImageComponent"
 const circuitMelbourne = () => {
   return (
     <Page>
-      <h1 className="bg-gray-300 text-center font-bold italic mb-3">
+      <h1 className="bg-red-600 text-center font-bold italic mb-3">
         GRAND PRIX D'AUSTRALIE
       </h1>
       <div className="flex flex-wrap justify-between">
-        <div className="flex flex-col m-3 max-w-[900px] bg-red-500">
+        <div className="flex flex-col m-3 max-w-[900px]">
           <p>
             La première édition du Grand Prix d'Australie s'est tenue le 26 mars
             1928, sur le tracé du circuit de Phillip Island. Officiellement
             dénommée 100 Miles Road Race, l'épreuve n'a été considérée qu'a
             posteriori comme le premier GP d'Australie.
           </p>
-          <div className="flex flex-wrap m-3 bg-green-500">
+          <div className="flex flex-wrap m-3">
             <div className="w-[435px] border-2 border-black ">
               <table className="flex flex-col">
                 <thead className="flex flex-col">
                   <tr className="flex flex-col">
-                    <th className="bg-gray-300 italic">
+                    <th className="bg-red-500 italic">
                       CARACTÉRISTIQUES DU 🇦🇺 ALBERT PARK INTERNATIONAL CIRCUIT
                     </th>
                   </tr>
@@ -68,13 +68,11 @@ const circuitMelbourne = () => {
           </div>
         </div>
 
-        <div className="m-3 w-[435px] bg-blue-500">
+        <div className="m-3 w-[435px]">
           <table className="flex flex-col border-2 border-black">
             <thead className="flex">
               <tr className="flex flex-col">
-                <th className="bg-gray-300 italic">
-                  🇦🇺 GRAND PRIX D'AUSTRALIE
-                </th>
+                <th className="bg-red-500 italic">🇦🇺 GRAND PRIX D'AUSTRALIE</th>
                 <td>
                   <div>
                     <ImageComponent
@@ -86,7 +84,7 @@ const circuitMelbourne = () => {
               </tr>
             </thead>
 
-            <tbody className="bg-gray-300 italic">
+            <tbody className="italic bg-red-600">
               <tr>
                 <th className="pl-2">DONNÉES DE COURSE</th>
               </tr>

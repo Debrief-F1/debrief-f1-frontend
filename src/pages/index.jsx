@@ -33,7 +33,7 @@ const App = () => {
 
   return (
     <div>
-      <div className="w-screen h-screen p-5   bg-gradient-to-b from-gray-100 to-gray-500  relative bg-red-30">
+      <div className="w-screen h-screen p-5 bg-gradient-to-b from-gray-100 to-gray-500 relative bg-red-30">
         <div className="flex flex-col items-center md:pt-20 text-center">
           <div className="flex items-center">
             <ImageComponent src="/images/drapaux/1.gif" className="w-20 h-10" />
@@ -43,10 +43,10 @@ const App = () => {
             <ImageComponent src="/images/drapaux/2.gif" className="w-20 h-10" />
           </div>
           <p className="md:w-[75%] my-5">
-            DEBRIEF-F1 EST L'APPLICATION QUI VOUS PROPOSE LES COURCES DE FORMULA
-            1 EN TEMPS REEL. GRACE A VOTRE APPLICATION DEBRIEF-F1, VOUS POUVEZ
-            EGALEMENT FAIRE DES COMMENTAIRES SUR LES COURSES, ET ELLE RESTE UNE
-            ARCHIVE QUE VOUS POUVEZ CONSULTER A TOUT MOMENT.
+            DEBRIEF-F1 EST L'APPLICATION QUI VOUS PROPOSE DES RÉSUMÉS SUR LES
+            COURSES DE FORMULE 1 EN TEMPS RÉEL, OÙ VOUS ALLEZ POUVOIR ÉGALEMENT
+            FAIRE DES COMMENTAIRES SUR LES COURSES QUE VOUS POURREZ CONSULTER À
+            TOUT MOMENT !
           </p>
           <div></div>
         </div>
@@ -72,7 +72,7 @@ const App = () => {
               href="/homepage"
               className="  active:bg-slate-200 rounded-xl text-center hover:underline"
             >
-              Contunue sans S'inscrire
+              Continuer sans S'inscrire
             </Link>
           </div>
           <div className="w-96 h-80  flex mt-3  items-center  rotate45 motion-safe:animate-bounc 3s ">

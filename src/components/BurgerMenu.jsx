@@ -30,7 +30,7 @@ const BurgerMenu = () => {
       </button>
       <ul
         className={classNames(
-          "flex flex-col fixed top-[60px] bottom-[50px] bg-slate-600 left-0 pl-6 transition-all duration-500 z-50 ease-in",
+          "flex flex-col fixed top-[60px] bottom-[50px] bg-gray-500 left-0 pl-6 transition-all duration-500 z-50 ease-in",
           { "-left-full": !menuOpen }
         )}
       >

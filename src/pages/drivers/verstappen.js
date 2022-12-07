@@ -4,14 +4,15 @@ import ImageComponent from "@/components/ImageComponent"
 const verstappen = () => {
   return (
     <Page>
-      <div className="flex justify-between border-2 border-black rounded-lg text-white italic font-bold bg-black">
+      <div className="flex justify-between text-black italic font-bold">
         <div className="flex flex-col ml-1">
           <h1 className="text-2xl flex flex-col">NOM : Max VERSTAPPEN</h1>
           <div className="flex">
             <p>TEAM : </p>
-            <p className="w-7">
-              <ImageComponent src="/images/logo/redbulllogo.webp" />
-            </p>
+            <ImageComponent
+              className="w-7"
+              src="/images/logo/redbulllogo.webp"
+            />
             RED BULL RACING
           </div>
           <p>PAYS : 🇳🇱 PAYS-BAS</p>
@@ -27,9 +28,9 @@ const verstappen = () => {
         </div>
       </div>
 
-      <h2 className="bg-red-700 mt-2">PALMARÈS</h2>
+      <h2 className="bg-red-600 mt-2">PALMARÈS</h2>
 
-      <table className="flex border-2 border-black rounded-lg text-white italic font-bold bg-black">
+      <table className="flex text-black italic font-bold">
         <thead>
           <tr className="flex flex-col text-left ml-1">
             <th>DÉBUT EN F1 :</th>
@@ -58,27 +59,28 @@ const verstappen = () => {
         </tbody>
       </table>
       <div>
-        <h3 className="bg-red-700 mt-2">CARRIÈRE</h3>
-        <table>
+        <h3 className="bg-red-600 mt-2">CARRIÈRE</h3>
+        <table className="border-2 border-black">
           <thead>
-            <tr className="border-2 bg-gray-500">
-              <th className="border-2">SEASON</th>
-              <th className="border-2">CONSCTRUCTORS</th>
-              <th className="border-2">RANK</th>
-              <th className="border-2">PTS</th>
-              <th className="border-2">GP</th>
-              <th className="border-2">VICTORY</th>
-              <th className="border-2">PODIUM</th>
-              <th className="border-2">ABANDON</th>
+            <tr className="border-2 border-black">
+              <th className="border-r-2 border-black">SEASON</th>
+              <th className="border-r-2 border-black">CONSCTRUCTORS</th>
+              <th className="border-r-2 border-black">RANK</th>
+              <th className="border-r-2 border-black">PTS</th>
+              <th className="border-r-2 border-black">GP</th>
+              <th className="border-r-2 border-black">VICTORY</th>
+              <th className="border-r-2 border-black">PODIUM</th>
+              <th className="border-r-2 border-black">ABANDON</th>
             </tr>
           </thead>
           <tbody>
             <tr className="border-b-2 border-black">
-              <td>2022</td>
+              <td className="text-center">2022</td>
               <td className="flex justify-center">
-                <div className="w-7">
-                  <ImageComponent src="/images/logo/redbulllogo.webp" />
-                </div>
+                <ImageComponent
+                  className="w-7"
+                  src="/images/logo/redbulllogo.webp"
+                />
                 REDBULL
               </td>
               <td className="text-center">1</td>
@@ -91,11 +93,12 @@ const verstappen = () => {
           </tbody>
           <tbody>
             <tr className="border-b-2 border-black">
-              <td>2021</td>
+              <td className="text-center">2021</td>
               <td className="flex justify-center">
-                <div className="w-7">
-                  <ImageComponent src="/images/logo/redbulllogo.webp" />
-                </div>
+                <ImageComponent
+                  className="w-7"
+                  src="/images/logo/redbulllogo.webp"
+                />
                 REDBULL
               </td>
               <td className="text-center">1</td>
@@ -108,11 +111,12 @@ const verstappen = () => {
           </tbody>
           <tbody>
             <tr className="border-b-2 border-black">
-              <td>2020</td>
+              <td className="text-center">2020</td>
               <td className="flex justify-center">
-                <div className="w-7">
-                  <ImageComponent src="/images/logo/redbulllogo.webp" />
-                </div>
+                <ImageComponent
+                  className="w-7"
+                  src="/images/logo/redbulllogo.webp"
+                />
                 REDBULL
               </td>
               <td className="text-center">3</td>
@@ -125,11 +129,12 @@ const verstappen = () => {
           </tbody>
           <tbody>
             <tr className="border-b-2 border-black">
-              <td>2019</td>
+              <td className="text-center">2019</td>
               <td className="flex justify-center">
-                <div className="w-7">
-                  <ImageComponent src="/images/logo/redbulllogo.webp" />
-                </div>
+                <ImageComponent
+                  className="w-7"
+                  src="/images/logo/redbulllogo.webp"
+                />
                 REDBULL
               </td>
               <td className="text-center">3</td>
