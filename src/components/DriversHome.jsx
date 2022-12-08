@@ -1,4 +1,4 @@
-import Image from "@/components/Image"
+import ImageComponent from "@/components/ImageComponent"
 
 const DriversHome = () => {
   return (
@@ -22,13 +22,13 @@ const DriversHome = () => {
             <td>🇳🇱</td>
             <td className="flex justify-start gap-3">
               <div className="w-7">
-                <Image src="/images/pilots/verstappen.webp" />
+                <ImageComponent src="/images/pilots/verstappen.webp" />
               </div>
               VERSTAPPEN
             </td>
             <td>
               <div className="flex justify-center">
-                <Image
+                <ImageComponent
                   style={{ width: 30, height: 30 }}
                   src="/images/logo/redbulllogo.webp"
                 />
@@ -41,13 +41,13 @@ const DriversHome = () => {
             <td>🇲🇽</td>
             <td className="flex justify-start gap-3">
               <div className="w-7">
-                <Image src="/images/pilots/perez.webp" />
+                <ImageComponent src="/images/pilots/perez.webp" />
               </div>
               PEREZ
             </td>
             <td>
               <div className="flex justify-center">
-                <Image
+                <ImageComponent
                   style={{ width: 30, height: 30 }}
                   src="/images/logo/redbulllogo.webp"
                 />
@@ -60,13 +60,13 @@ const DriversHome = () => {
             <td>🇲🇨</td>
             <td className="flex justify-start gap-3">
               <div className="w-7 flex">
-                <Image src="/images/pilots/leclerc.webp" />
+                <ImageComponent src="/images/pilots/leclerc.webp" />
               </div>
               LECLERC
             </td>
             <td>
               <div className="flex justify-center">
-                <Image
+                <ImageComponent
                   style={{ width: 30, height: 30 }}
                   src="/images/logo/ferrarilogo.webp"
                 />
@@ -79,13 +79,13 @@ const DriversHome = () => {
             <td>🇬🇧</td>
             <td className="flex justify-start gap-3">
               <div className="w-7">
-                <Image src="/images/pilots/russell.webp" />
+                <ImageComponent src="/images/pilots/russell.webp" />
               </div>
               RUSSELL
             </td>
             <td>
               <div className="flex justify-center">
-                <Image
+                <ImageComponent
                   style={{ width: 30, height: 30 }}
                   src="/images/logo/mercedeslogo.webp"
                 />
@@ -98,13 +98,13 @@ const DriversHome = () => {
             <td>🇬🇧</td>
             <td className="flex justify-start gap-3">
               <div className="w-7">
-                <Image src="/images/pilots/hamilton.webp" />
+                <ImageComponent src="/images/pilots/hamilton.webp" />
               </div>
               HAMILTON
             </td>
             <td>
               <div className="flex justify-center">
-                <Image
+                <ImageComponent
                   style={{ width: 30, height: 30 }}
                   src="/images/logo/mercedeslogo.webp"
                 />

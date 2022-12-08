@@ -1,26 +1,26 @@
 import Page from "@/components/Page"
-import Image from "@/components/Image"
+import ImageComponent from "@/components/ImageComponent"
 
 const circuitMonaco = () => {
   return (
     <Page>
-      <h1 className="bg-gray-300 text-center font-bold italic mb-3">
+      <h1 className="bg-red-600 text-center font-bold italic mb-3">
         GRAND PRIX DE MONACO
       </h1>
       <div className="flex flex-wrap justify-between">
-        <div className="flex flex-col m-3 max-w-[900px] bg-red-500">
+        <div className="flex flex-col m-3 max-w-[900px]">
           <p>
             La première édition du Grand Prix d'Australie s'est tenue en 1928,
             sur le tracé du circuit de Phillip Island. Officiellement dénommée
             100 Miles Road Race, l'épreuve n'a été considérée qu'a posteriori
             comme le premier GP d'Australie.
           </p>
-          <div className="flex flex-wrap m-3 bg-green-500">
+          <div className="flex flex-wrap m-3">
             <div className="w-[435px] border-2 border-black ">
               <table className="flex flex-col">
                 <thead className="flex flex-col">
                   <tr className="flex flex-col">
-                    <th className="bg-gray-300 italic">
+                    <th className="bg-red-500 italic">
                       CARACTÉRISTIQUES DU CIRCUIT DE MONACO
                     </th>
                   </tr>
@@ -60,7 +60,7 @@ const circuitMonaco = () => {
               </table>
             </div>
             <div className="flex justify-end">
-              <Image
+              <ImageComponent
                 style={{ width: 435, height: 300 }}
                 src="/images/circuits/monaco.jpg"
               />
@@ -68,16 +68,14 @@ const circuitMonaco = () => {
           </div>
         </div>
 
-        <div className="m-3 w-[435px] bg-blue-500">
+        <div className="m-3 w-[435px]">
           <table className="flex flex-col border-2 border-black">
             <thead className="flex">
               <tr className="flex flex-col">
-                <th className="bg-gray-300 italic">
-                  🇦🇺 CIRCUIT DE L'ALBERT PARK
-                </th>
+                <th className="bg-red-500 italic">🇲🇨 CIRCUIT DE MONACO</th>
                 <td>
                   <div>
-                    <Image
+                    <ImageComponent
                       style={{ width: 435, height: 300 }}
                       src="/images/circuits/monacocircuit.png"
                     />
@@ -86,7 +84,7 @@ const circuitMonaco = () => {
               </tr>
             </thead>
 
-            <tbody className="bg-gray-300 italic">
+            <tbody className="bg-red-500 italic">
               <tr>
                 <th className="pl-2">DONNÉES DE COURSE</th>
               </tr>

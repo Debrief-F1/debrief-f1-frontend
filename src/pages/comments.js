@@ -68,7 +68,7 @@ const Comments = () => {
   return (
     <div className="">
       <div className=" flex flex-col items-center bg-gradient-to-b from-gray-100 to-gray-500  rounded-md border-2 border-indigo-600 ">
-        <h1 className="text-2xl font-bold p-5">Ajouter un commentaire</h1>
+        <h1 className="text-2xl font-bold p-5">Add comments</h1>
         <div>
           {errors.length ? (
             <div className="rounded-lg border-4 border-red-600 mb-4 flex flex-col gap-4 p-4">
@@ -86,7 +86,7 @@ const Comments = () => {
             <Form className="flex flex-col items-center gap-2">
               <div>
                 <div className="flex flex-col">
-                  <label>name *:</label>
+                  <label>Name *:</label>
                   <Field
                     type="text"
                     name="name"
@@ -100,7 +100,7 @@ const Comments = () => {
                 </div>
 
                 <div className="flex flex-col">
-                  <label>content *:</label>
+                  <label>Comment *:</label>
                   <Field
                     as="textarea"
                     name="content"
@@ -117,7 +117,7 @@ const Comments = () => {
                 type="submit"
                 className="p-2 w-[75%] text font-bold text-white bg-blue-500 active:bg-blue-400 rounded"
               >
-                envoyer
+                Send
               </button>
             </Form>
           </Formik>

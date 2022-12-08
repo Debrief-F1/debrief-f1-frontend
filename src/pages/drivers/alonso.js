@@ -1,17 +1,18 @@
 import Page from "@/components/Page"
-import Image from "@/components/Image"
+import ImageComponent from "@/components/ImageComponent"
 
 const alonso = () => {
   return (
     <Page>
-      <div className="flex justify-between border-2 border-black rounded-lg text-white italic font-bold bg-black">
+      <div className="flex justify-between text-black italic font-bold">
         <div className="flex flex-col ml-1">
           <h1 className="text-2xl flex flex-col">NOM : Fernando ALONSO</h1>
           <div className="flex">
             <p>TEAM : </p>
-            <p className="w-7">
-              <Image src="/images/logo/alpinelogo.webp" />
-            </p>
+            <ImageComponent
+              className="w-7"
+              src="/images/logo/alpinelogo.webp"
+            />
             ALPINE
           </div>
           <p>PAYS : 🇪🇸 ESPAGNE</p>
@@ -20,16 +21,16 @@ const alonso = () => {
           <p>TAILLE : 1M71</p>
         </div>
         <div className="h-full flex flex-wrap">
-          <Image
+          <ImageComponent
             style={{ width: 200, height: 150 }}
             src="/images/pilots/alonso.webp"
           />
         </div>
       </div>
 
-      <h2 className="bg-red-700 mt-2">PALMARÈS</h2>
+      <h2 className="bg-red-600 mt-2">PALMARÈS</h2>
 
-      <table className="flex border-2 border-black rounded-lg text-white italic font-bold bg-black">
+      <table className="flex text-black italic font-bold">
         <thead>
           <tr className="flex flex-col text-left ml-1">
             <th>DÉBUT EN F1 :</th>
@@ -58,27 +59,28 @@ const alonso = () => {
         </tbody>
       </table>
       <div>
-        <h3 className="bg-red-700 mt-2">CARRIÈRE</h3>
-        <table>
+        <h3 className="bg-red-600 mt-2">CARRIÈRE</h3>
+        <table className="border-r-2 border-black">
           <thead>
-            <tr className="border-2 bg-gray-500">
-              <th className="border-2">SEASON</th>
-              <th className="border-2">CONSCTRUCTORS</th>
-              <th className="border-2">RANK</th>
-              <th className="border-2">PTS</th>
-              <th className="border-2">GP</th>
-              <th className="border-2">VICTORY</th>
-              <th className="border-2">PODIUM</th>
-              <th className="border-2">ABANDON</th>
+            <tr>
+              <th className="border-2 border-black">SEASON</th>
+              <th className="border-2 border-black">CONSCTRUCTORS</th>
+              <th className="border-2 border-black">RANK</th>
+              <th className="border-2 border-black">PTS</th>
+              <th className="border-2 border-black">GP</th>
+              <th className="border-2 border-black">VICTORY</th>
+              <th className="border-2 border-black">PODIUM</th>
+              <th className="border-2 border-black">ABANDON</th>
             </tr>
           </thead>
           <tbody>
             <tr className="border-b-2 border-black">
-              <td>2022</td>
+              <td className="text-center">2022</td>
               <td className="flex justify-center">
-                <div className="w-7">
-                  <Image src="/images/logo/alpinelogo.webp" />
-                </div>
+                <ImageComponent
+                  className="w-7"
+                  src="/images/logo/alpinelogo.webp"
+                />
                 ALPINE
               </td>
               <td className="text-center">9</td>
@@ -91,11 +93,12 @@ const alonso = () => {
           </tbody>
           <tbody>
             <tr className="border-b-2 border-black">
-              <td>2021</td>
+              <td className="text-center">2021</td>
               <td className="flex justify-center">
-                <div className="w-7">
-                  <Image src="/images/logo/alpinelogo.webp" />
-                </div>
+                <ImageComponent
+                  className="w-7"
+                  src="/images/logo/alpinelogo.webp"
+                />
                 ALPINE
               </td>
               <td className="text-center">10</td>
@@ -108,11 +111,12 @@ const alonso = () => {
           </tbody>
           <tbody>
             <tr className="border-b-2 border-black">
-              <td>2018</td>
+              <td className="text-center">2018</td>
               <td className="flex justify-center">
-                <div className="w-7">
-                  <Image src="/images/logo/mclarenlogo.webp" />
-                </div>
+                <ImageComponent
+                  className="w-7"
+                  src="/images/logo/mclarenlogo.webp"
+                />
                 MCLAREN
               </td>
               <td className="text-center">11</td>
@@ -125,11 +129,12 @@ const alonso = () => {
           </tbody>
           <tbody>
             <tr className="border-b-2 border-black">
-              <td>2017</td>
+              <td className="text-center">2017</td>
               <td className="flex justify-center">
-                <div className="w-7">
-                  <Image src="/images/logo/mclarenlogo.webp" />
-                </div>
+                <ImageComponent
+                  className="w-7"
+                  src="/images/logo/mclarenlogo.webp"
+                />
                 MCLAREN
               </td>
               <td className="text-center">15</td>

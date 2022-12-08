@@ -1,4 +1,4 @@
-import Image from "@/components/Image"
+import ImageComponent from "@/components/ImageComponent"
 import Page from "@/components/Page"
 
 const constructorsRanking = () => {
@@ -24,12 +24,12 @@ const constructorsRanking = () => {
                 <td>1</td>
                 <td className="flex justify-center">
                   <div className="w-7">
-                    <Image src="/images/logo/redbulllogo.webp" />
+                    <ImageComponent src="/images/logo/redbulllogo.webp" />
                   </div>
                   REDBULL
                 </td>
                 <td className="w-7">
-                  <Image src="/images/cars/redbullcar.webp" />
+                  <ImageComponent src="/images/cars/redbullcar.webp" />
                 </td>
                 <td>696</td>
               </tr>
@@ -40,12 +40,12 @@ const constructorsRanking = () => {
                 <td>2</td>
                 <td className="flex justify-center">
                   <div className="w-7">
-                    <Image src="/images/logo/ferrarilogo.webp" />
+                    <ImageComponent src="/images/logo/ferrarilogo.webp" />
                   </div>
                   FERRARI
                 </td>
                 <td className="w-7">
-                  <Image src="/images/cars/ferraricar.webp" />
+                  <ImageComponent src="/images/cars/ferraricar.webp" />
                 </td>
                 <td>487</td>
               </tr>
@@ -56,12 +56,12 @@ const constructorsRanking = () => {
                 <td>3</td>
                 <td className="flex justify-center">
                   <div className="w-7">
-                    <Image src="/images/logo/mercedeslogo.webp" />
+                    <ImageComponent src="/images/logo/mercedeslogo.webp" />
                   </div>
                   MERCEDES
                 </td>
                 <td className="w-7">
-                  <Image src="/images/cars/mercedescar.webp" />
+                  <ImageComponent src="/images/cars/mercedescar.webp" />
                 </td>
                 <td>447</td>
               </tr>
@@ -72,12 +72,12 @@ const constructorsRanking = () => {
                 <td>4</td>
                 <td className="flex justify-center">
                   <div className="w-7">
-                    <Image src="/images/logo/alpinelogo.webp" />
+                    <ImageComponent src="/images/logo/alpinelogo.webp" />
                   </div>
                   ALPINE
                 </td>
                 <td className="w-7">
-                  <Image src="/images/cars/alpinecar.webp" />
+                  <ImageComponent src="/images/cars/alpinecar.webp" />
                 </td>
                 <td>153</td>
               </tr>
@@ -88,12 +88,12 @@ const constructorsRanking = () => {
                 <td>5</td>
                 <td className="flex justify-center">
                   <div className="w-7">
-                    <Image src="/images/logo/mclarenlogo.webp" />
+                    <ImageComponent src="/images/logo/mclarenlogo.webp" />
                   </div>
                   MACLAREN
                 </td>
                 <td className="w-7">
-                  <Image src="/images/cars/mclarencar.webp" />
+                  <ImageComponent src="/images/cars/mclarencar.webp" />
                 </td>
                 <td>146</td>
               </tr>
@@ -104,12 +104,12 @@ const constructorsRanking = () => {
                 <td>6</td>
                 <td className="flex justify-center">
                   <div className="w-7">
-                    <Image src="/images/logo/alfaromeologo.webp" />
+                    <ImageComponent src="/images/logo/alfaromeologo.webp" />
                   </div>
                   ALFA ROMEO
                 </td>
                 <td className="w-7">
-                  <Image src="/images/cars/alfaromeocar.webp" />
+                  <ImageComponent src="/images/cars/alfaromeocar.webp" />
                 </td>
                 <td>53</td>
               </tr>
@@ -120,12 +120,12 @@ const constructorsRanking = () => {
                 <td>7</td>
                 <td className="flex justify-center">
                   <div className="w-7">
-                    <Image src="/images/logo/astonmartinlogo.webp" />
+                    <ImageComponent src="/images/logo/astonmartinlogo.webp" />
                   </div>
                   ASTON MARTIN
                 </td>
                 <td className="w-7">
-                  <Image src="/images/cars/astonmartincar.webp" />
+                  <ImageComponent src="/images/cars/astonmartincar.webp" />
                 </td>
                 <td>49</td>
               </tr>
@@ -136,12 +136,12 @@ const constructorsRanking = () => {
                 <td>8</td>
                 <td className="flex justify-center">
                   <div className="w-7">
-                    <Image src="/images/logo/haaslogo.webp" />
+                    <ImageComponent src="/images/logo/haaslogo.webp" />
                   </div>
                   HAAS
                 </td>
                 <td className="w-7">
-                  <Image src="/images/cars/haascar.webp" />
+                  <ImageComponent src="/images/cars/haascar.webp" />
                 </td>
                 <td>36</td>
               </tr>
@@ -152,12 +152,12 @@ const constructorsRanking = () => {
                 <td>9</td>
                 <td className="flex justify-center">
                   <div className="w-7">
-                    <Image src="/images/logo/alphataurilogo.webp" />
+                    <ImageComponent src="/images/logo/alphataurilogo.webp" />
                   </div>
                   ALPHATAURI
                 </td>
                 <td className="w-7">
-                  <Image src="/images/cars/alphatauricar.webp" />
+                  <ImageComponent src="/images/cars/alphatauricar.webp" />
                 </td>
                 <td>35</td>
               </tr>
@@ -168,12 +168,12 @@ const constructorsRanking = () => {
                 <td>10</td>
                 <td className="flex justify-center">
                   <div className="w-7">
-                    <Image src="/images/logo/williamslogo.webp" />
+                    <ImageComponent src="/images/logo/williamslogo.webp" />
                   </div>
                   WILLIAMS
                 </td>
                 <td className="w-7">
-                  <Image src="/images/cars/williamscar.webp" />
+                  <ImageComponent src="/images/cars/williamscar.webp" />
                 </td>
                 <td>8</td>
               </tr>

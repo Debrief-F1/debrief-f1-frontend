@@ -5,6 +5,7 @@ import Page from "@/components/Page"
 import LastRaceResult from "@/components/LastRaceResult"
 import LastRaceArticle from "@/components/LastRaceArticle"
 import NewsComponnent from "@/components/NewsComponnent"
+import { useAppContext } from "@/components/AppContext"
 
 const articles = [
   {
@@ -25,6 +26,10 @@ const articles = [
 ]
 
 const homepage = () => {
+  const {
+    state: { session },
+  } = useAppContext()
+
   return (
     <Page>
       <div className="flex flex-col xl:flex-row xl:justify-evenly ">

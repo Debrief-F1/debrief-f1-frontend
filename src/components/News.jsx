@@ -1,4 +1,4 @@
-import Image from "@/components/Image"
+import ImageComponent from "@/components/ImageComponent"
 import Link from "next/link"
 
 const News = () => {
@@ -11,7 +11,7 @@ const News = () => {
               <Link href="/news/mercenews">Mercedes Domine !</Link>
             </h1>
             <p className="text-xs text-red-600 pl-3">07 July 2022</p>
-            <Image
+            <ImageComponent
               style={{ width: 300, height: 50 }}
               src="/images/logo/mercedeslogo.webp"
             />
@@ -27,7 +27,7 @@ const News = () => {
                 <Link href="/news/astonews">Aston Martin Patine !</Link>
               </h1>
               <p className="text-xs text-red-600 pl-3">07 July 2022</p>
-              <Image
+              <ImageComponent
                 style={{ width: 300, height: 50 }}
                 src="/images/logo/astonmartinlogo.webp"
               />
@@ -44,7 +44,7 @@ const News = () => {
                 <Link href="/news/redbullews">Redbull s'envole !</Link>
               </h1>
               <p className="text-xs text-red-600 pl-3">07 July 2022</p>
-              <Image
+              <ImageComponent
                 style={{ width: 300, height: 50 }}
                 src="/images/logo/redbulllogo.webp"
               />
