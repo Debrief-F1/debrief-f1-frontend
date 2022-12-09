@@ -4,12 +4,13 @@ import DriversHome from "@/components/DriversHome"
 import News from "@/components/News"
 import Page from "@/components/Page"
 import LastRaceResult from "@/components/LastRaceResult"
+import LastRaceArticle from "@/components/LastRaceArticle"
 
 const homepage = () => {
   return (
     <Page>
       <div className="flex flex-wrap justify-between">
-        <div className="bg-blue-700 flex flex-col p-1">
+        <div className="flex flex-col p-1 w-3/5">
           <div className="flex flex-wrap justify-between items-center gap-3">
             <iframe
               className="rounded-xl"
@@ -21,12 +22,13 @@ const homepage = () => {
             ></iframe>
             <LastRaceResult />
           </div>
-          <div className="w-full">
+          <div className="flex">
             <News />
+            <LastRaceArticle />
           </div>
         </div>
 
-        <div className="bg-red-700 flex flex-col justify-end gap-y-2 p-1">
+        <div className="flex flex-col justify-end gap-y-2 p-1">
           <CountdownRace />
           <DriversHome />
           <ConstructorsHome />

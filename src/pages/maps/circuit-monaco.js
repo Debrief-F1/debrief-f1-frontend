@@ -62,7 +62,7 @@ const circuitMonaco = () => {
             <div className="flex justify-end">
               <Image
                 style={{ width: 435, height: 300 }}
-                src="/images/circuits/monaco.png"
+                src="/images/circuits/monaco.jpg"
               />
             </div>
           </div>
@@ -79,7 +79,7 @@ const circuitMonaco = () => {
                   <div>
                     <Image
                       style={{ width: 435, height: 300 }}
-                      src="/images/circuits/monaco.jpg"
+                      src="/images/circuits/monacocircuit.png"
                     />
                   </div>
                 </td>
