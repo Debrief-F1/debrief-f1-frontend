@@ -2,7 +2,6 @@ import React, { useCallback, useState } from "react"
 import Link from "@/components/Link"
 import classNames from "classnames"
 import { GrMenu } from "react-icons/gr"
-
 const links = [
   { children: "Last Race", href: "/last-race" },
   { children: "Constructors Ranking", href: "/constructors-ranking" },
