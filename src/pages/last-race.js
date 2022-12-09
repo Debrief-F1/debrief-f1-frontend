@@ -7,7 +7,7 @@ const LastRace = () => {
         <section className="overflow-auto grow">
           <div className="flex flex-col items-center">
             <div>
-              <h1 className="text-4xl font-bold py-3">Course precidante</h1>
+              <h1 className="text-4xl font-bold py-3">Last Race</h1>
             </div>
             <div>
               <iframe
@@ -16,13 +16,12 @@ const LastRace = () => {
                 height=""
                 src="https://www.youtube.com/embed/3X0mA0Nn96Y"
                 title="Le film de la course - GP du Japon"
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen
+                frameBorder="0"
+                allow="fullscreen; accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               ></iframe>
             </div>
             <div className="m-5 ">
-              <h1 className="font-bold text-2xl">lecture de la course!</h1>
+              <h1 className="font-bold text-2xl">Race comment</h1>
               <p>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil,
                 tenetur eaque vitae amet quis quidem tempora eos atque, deleniti

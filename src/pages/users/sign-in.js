@@ -33,7 +33,7 @@ const Inscription = () => {
 
         if (jwt) {
           setSession(jwt)
-          router.push("/")
+          router.push("/homepage")
 
           return
         }
@@ -60,16 +60,9 @@ const Inscription = () => {
   return (
     <Page>
       <div className="h-screen">
-        <div className=" h-full flex flex-col items-center bg-gradient-to-b from-gray-100 to-gray-500  rounded-md border-2 border-indigo-600 ">
-          <div className="">
-            <img
-              className="w-64 h-32"
-              src="https://www.pngmart.com/files/10/Formula-1-Logo-PNG-File.png"
-              alt="logo f1"
-            />
-          </div>
-          <div className="bg-white p-10 mt-20 rounded-xl shadow-lg shadow-white">
-            <h1 className=" text-center text-4xl font-bold mb-5  bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-violet-900 ">
+        <div className=" h-full flex flex-col items-center rounded-md border-2">
+          <div className="p-10 mt-20">
+            <h1 className="text-center text-4xl font-bold mb-5 bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-violet-900">
               Sign-In
             </h1>
 

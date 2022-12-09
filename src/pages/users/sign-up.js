@@ -6,11 +6,9 @@ import Modal from "@/components/Modal.jsx"
 import Link from "@/components/Link"
 import api from "@/services/api"
 import { BiShowAlt, BiLowVision } from "react-icons/bi"
-
 import validationSchema from "@/components/Validateur"
 import Button from "@/components/Button"
 import Page from "@/components/Page"
-// import { useAppContext } from "@/components/AppContext"
 
 const initialValues = {
   username: "",
@@ -34,25 +32,7 @@ const SignUp = () => {
   }
 
   const router = useRouter()
-  // const { setSession } = useAppContext()
   const [errors, setErrors] = useState([])
-
-  // const signIn = useCallback(
-  //   async ({ emailOrUsername, password }) => {
-  //     const {
-  //       data: {
-  //         result: [{ jwt }],
-  //       },
-  //     } = await api.post("/sign-in", { emailOrUsername, password })
-
-  //     if (jwt) {
-  //       setSession(jwt)
-
-  //       return
-  //     }
-  //   },
-  //   [setSession]
-  // )
 
   const handleSubmit = useCallback(
     async ({ email, username, displayName, password }) => {
@@ -63,9 +43,6 @@ const SignUp = () => {
         const {
           data: { count },
         } = await api.post("/users", { email, username, displayName, password })
-
-        // const emailOrUsername = email
-        // signIn({ emailOrUsername, password })
 
         if (count) {
           router.push("/users/sign-in")
@@ -102,17 +79,10 @@ const SignUp = () => {
   return (
     <Page>
       <div className="h-screen">
-        <div className=" h-full flex flex-col items-center bg-gradient-to-b from-gray-100 to-gray-500  rounded-md border-2 border-indigo-600 ">
-          <div className="">
-            <img
-              className="w-64 h-32"
-              src="https://www.pngmart.com/files/10/Formula-1-Logo-PNG-File.png"
-              alt="logo f1"
-            />
-          </div>
+        <div className=" h-full flex flex-col items-center rounded-md border-2">
           <div>
             <div className="text-center">
-              <h1 className="text-center text-4xl font-bold mb-5  bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-violet-900 ">
+              <h1 className="text-center text-4xl font-bold mb-5 bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-violet-900 ">
                 Sign-Up
               </h1>
               <p>
@@ -181,7 +151,6 @@ const SignUp = () => {
                       className="text-red-600"
                     />
                   </div>
-
                   <div className="flex flex-col">
                     <label>Mot de passe *:</label>
                     <div className="flex items-center justify-between border-2 px-2 border-black rounded bg-white">

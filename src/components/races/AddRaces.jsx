@@ -46,7 +46,8 @@ const AddRacesForm = () => {
   )
 
   return (
-    <div className="">
+    <div className=" flex flex-col items-center">
+      <p>Add races</p>
       {errors.length ? (
         <div className="rounded-lg border-4 border-red-600 mb-4 flex flex-col gap-4 p-4">
           {errors.map((error) => (
@@ -117,7 +118,7 @@ const AddRacesForm = () => {
             >
               cree
             </button>
-            <Link href="/" className="hover:underline pt-2">
+            <Link href="/admin" className="hover:underline pt-2">
               return
             </Link>
           </div>

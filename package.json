@@ -23,6 +23,7 @@
     "formik": "^2.2.9",
     "heroicons": "^2.0.11",
     "next": "^12.2.0",
+    "node-mailjet": "^5.1.1",
     "postcss": "^8.4.14",
     "prettier": "^2.7.1",
     "react": "18.2.0",
@@ -30,6 +31,7 @@
     "react-hook-form": "^7.38.0",
     "react-icons": "^4.4.0",
     "tailwindcss": "^3.1.4",
+    "three": "^0.146.0",
     "yup": "^0.32.11"
   },
   "devDependencies": {

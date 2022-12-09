@@ -1,14 +1,14 @@
 import Page from "@/components/Page"
-import Image from "@/components/Image"
+import ImageComponent from "@/components/ImageComponent"
 
 const constructor = () => {
   return (
     <Page>
-      <div className="flex justify-between border-2 border-black rounded-lg text-white italic font-bold bg-black">
+      <div className="flex justify-between rounded-lg text-black italic font-bold">
         <div className="flex flex-col ml-1">
           <div className="flex">
             <p className="w-7">
-              <Image src="/images/logo/redbulllogo.webp" />
+              <ImageComponent src="/images/logo/redbulllogo.webp" />
             </p>
             <h1 className="text-2xl flex flex-col">RED BULL RACING</h1>
           </div>
@@ -20,16 +20,16 @@ const constructor = () => {
           <p>Jüri VIPS🇪🇪</p>
         </div>
         <div className="h-full flex flex-wrap">
-          <Image
+          <ImageComponent
             style={{ width: 350, height: 100 }}
             src="/images/cars/redbullcar.webp"
           />
         </div>
       </div>
 
-      <h2 className="bg-red-700 mt-2">PALMARÈS RED BULL RACING</h2>
+      <h2 className="bg-red-600 mt-2">PALMARÈS RED BULL RACING</h2>
 
-      <table className="flex border-2 border-black rounded-lg text-white italic font-bold bg-black">
+      <table className="flex text-black italic font-bold">
         <thead>
           <tr className="flex flex-col text-left ml-1">
             <th>DÉBUT EN F1 :</th>
@@ -51,8 +51,8 @@ const constructor = () => {
       </table>
 
       <div>
-        <h3 className="bg-red-700 mt-2">ADMNINISTRATIF</h3>
-        <table className="flex border-2 border-black rounded-lg text-white italic font-bold bg-black">
+        <h3 className="bg-red-600 mt-2">ADMNINISTRATIF</h3>
+        <table className="flex text-black italic font-bold">
           <thead>
             <tr className="flex flex-col text-left ml-1">
               <th>SITE :</th>

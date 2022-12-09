@@ -4,22 +4,16 @@ import { Formik, Field, Form, ErrorMessage } from "formik"
 import { useRouter } from "next/router.js"
 import api from "@/services/api.js"
 import { AxiosError } from "axios"
-// import validationSchema from "@/components/Validateur.jsx"
-// import { useAppContext } from "@/components/AppContext"
+import validationSchema from "@/components/Validateur.jsx"
+import ImageSrc from "@/components/ImageSrc"
 
 const initialValues = {
-  // username: "",
-  // displayName: "",
   email: "",
   password: "",
   confirmPassword: "",
 }
 
 const UserPatch = () => {
-  // const {
-  //   state: { session },
-  // } = useAppContext()
-
   const router = useRouter()
   const [errors, setErrors] = useState([])
   const handleSubmit = useCallback(
@@ -29,7 +23,7 @@ const UserPatch = () => {
       try {
         const {
           data: { result },
-        } = await api.patch(`/users/${email}`, {
+        } = await api.patch(`/users/password/${email}`, {
           password,
         })
 
@@ -54,12 +48,8 @@ const UserPatch = () => {
   return (
     <div className="h-screen">
       <div className=" h-full flex flex-col items-center bg-gradient-to-b from-gray-100 to-gray-500  rounded-md border-2 border-indigo-600 ">
-        <div className="">
-          <img
-            className="w-64 h-32"
-            src="https://www.pngmart.com/files/10/Formula-1-Logo-PNG-File.png"
-            alt="logo f1"
-          />
+        <div className=" py-10">
+          <ImageSrc src="/images/logo/F1.png" className="w-48 h-15" />
         </div>
         <div>
           <div className="text-center">
@@ -77,10 +67,10 @@ const UserPatch = () => {
 
           <Formik
             initialValues={initialValues}
-            // validationSchema={validationSchema}
+            validationSchema={validationSchema}
             onSubmit={handleSubmit}
           >
-            <Form>
+            <Form className="flex flex-col gap-3">
               <div className="flex flex-col">
                 <label>Confirm your email :</label>
                 <Field
@@ -94,34 +84,6 @@ const UserPatch = () => {
                   className="text-red-600"
                 />
               </div>
-              {/* <div className="flex flex-col">
-                <label>New Username :</label>
-                <Field
-                  type="text"
-                  name="username"
-                  className="border-2 border-black px-2 rounded "
-                />
-                <ErrorMessage
-                  name="username"
-                  component="small"
-                  className="text-red-600 "
-                />
-              </div> */}
-
-              {/* <div className="flex flex-col">
-                <label>New DisplayName :</label>
-                <Field
-                  type="text"
-                  name="displayName"
-                  className="border-2 border-black px-2 rounded"
-                />
-                <ErrorMessage
-                  name="displayName"
-                  component="small"
-                  className="text-red-600"
-                />
-              </div> */}
-
               <div className="flex flex-col">
                 <label>New password :</label>
                 <Field
@@ -150,19 +112,13 @@ const UserPatch = () => {
                 />
               </div>
 
-              <div className="flex gap-3 my-3 justify-between">
+              <div className="flex justify-center">
                 <button
                   type="submit"
-                  className="p-2 text font-bold text-white bg-blue-500 active:bg-blue-400 rounded "
+                  className="p-2 w-[75%] text font-bold text-white bg-blue-500 active:bg-blue-400 rounded "
                 >
                   Confirm
                 </button>
-                {/* <Link
-                  className="p-2 text font-bold text-white bg-blue-500 active:bg-blue-400 rounded"
-                  href="/setting"
-                >
-                  Annule
-                </Link> */}
               </div>
             </Form>
           </Formik>

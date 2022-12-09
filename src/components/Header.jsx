@@ -4,7 +4,7 @@ import BurgerMenu from "./BurgerMenu"
 import { VscSignOut } from "react-icons/vsc"
 import { AiOutlineUser } from "react-icons/ai"
 import Link from "./Link"
-import Image from "@/components/Image"
+import Image from "@/components/ImageComponent"
 
 const Header = () => {
   const router = useRouter()
@@ -34,19 +34,18 @@ const Header = () => {
       {session ? (
         <div className="flex items-center ">
           <h1>
-            Bonjour{" "}
+            Bonjour
             <span className="text-blue-600 pr-2"> {session.user.username}</span>
           </h1>
           <button onClick={handelClick}>
-            {" "}
-            <VscSignOut className="w-[50px] h-[50px] pt-2 pr-2" />
+            <VscSignOut className="w-7 h-7 mr-6" />
           </button>
         </div>
       ) : (
-        <h1 className=" font-bold  px-4 pt-2 border-b-2">
+        <h1 className=" font-bold my-auto mr-4">
           <Link href="/users/sign-up">
-            <AiOutlineUser className="w-[35px] h-[35px]" />
-          </Link>{" "}
+            <AiOutlineUser className="w-7 h-7" />
+          </Link>
         </h1>
       )}
     </header>
